@@ -68,7 +68,7 @@ Verify that sbt is installed correctly: open the `Terminal` application from `/A
  - Download the sbt installer from here: [http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.0/sbt.msi](http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.0/sbt.msi)
  - Run the installer
 
-Verify that sbt is installed correctly: open the Command Prompt and type `sbt -h`, you should see a help message from sbt. If you have problems installing sbt, ask for help on the forums.
+Verify that sbt is installed correctly: open the Command Prompt and type `sbt sbt-version`, you should see the version number of sbt. If you have problems installing sbt, ask for help on the forums.
 
 
 ## Installing Eclipse and the Scala IDE
