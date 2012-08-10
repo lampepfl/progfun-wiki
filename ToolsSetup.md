@@ -1,5 +1,5 @@
 ---
-Tools Setup
+title: Tools Setup
 ---
 
 In order to work on the programming assignments, you need to have the following tools installed on your machine:
