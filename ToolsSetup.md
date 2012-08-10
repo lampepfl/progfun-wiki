@@ -1,5 +1,7 @@
 ---
+title
 ---
+
 In order to work on the programming assignments, you need to have the following tools installed on your machine:
 
  - JDK, the Java development kit, version 1.6 or 1.7
