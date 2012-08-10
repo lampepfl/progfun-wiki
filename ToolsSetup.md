@@ -1,10 +1,10 @@
 ---
-title
+Tools Setup
 ---
 
 In order to work on the programming assignments, you need to have the following tools installed on your machine:
 
- - JDK, the Java development kit, version 1.6 or 1.7
+ - JDK, the Java Development Kit, version 1.6 or 1.7
  - Sbt, a build tool for scala, version 0.12.0
  - Eclipse (version 3.7.2 / Indigo) and the Scala IDE (milestone for Scala 2.10.0-M5)
 
@@ -50,7 +50,7 @@ To verify the JDK installation, open the Command Prompt and type `java -version`
  - Download sbt from here: [http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.0/sbt.tgz](http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.0/sbt.tgz)
  - Unpack the archive
  - Add the `bin/` directory to the `PATH` environment variable. Open the file `~/.bashrc` in an editor and add the following line  
-```export PATH=/PATH/TO/sbt/bin:$PATH```
+```export PATH=/PATH/TO/YOUR/sbt/bin:$PATH```
 
 Verify that sbt is installed correctly: open a terminal and type `sbt -h`, you should see a help message from sbt. If you have problems installing sbt, ask for help on the forums.
 
@@ -59,7 +59,7 @@ Verify that sbt is installed correctly: open a terminal and type `sbt -h`, you s
  - Download sbt from here: [http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.0/sbt.tgz](http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.0/sbt.tgz)
  - Unpack the archive
  - Add the `bin/` directory to the `PATH` environment variable. Open the file `~/.bash_profile` in an editor and add the following line  
-```export PATH=/PATH/TO/sbt/bin:$PATH```
+```export PATH=/PATH/TO/YOUR/sbt/bin:$PATH```
 
 Verify that sbt is installed correctly: open the `Terminal` application from `/Applications/Utilities/` and type `sbt -h`, you should see a help message from sbt. If you have problems installing sbt, ask for help on the forums.
 
@@ -71,26 +71,28 @@ Verify that sbt is installed correctly: open the `Terminal` application from `/A
 Verify that sbt is installed correctly: open the Command Prompt and type `sbt -h`, you should see a help message from sbt. If you have problems installing sbt, ask for help on the forums.
 
 
-## Installing eclipse and the Scala IDE
-**NOTE**: The Scala IDE requires eclipse Indigo, version 3.7.2. Eclipse Juno, version 4.2, is **not** supported.
+## Installing Eclipse and the Scala IDE
+**NOTE**: The Scala IDE requires Eclipse Indigo, version 3.7.2. Eclipse Juno, version 4.2, is **not** supported.
 
- - Download eclipse Indigo (3.7.2) for your operating system from [http://www.eclipse.org/downloads/packages/eclipse-classic-372/indigosr2](http://www.eclipse.org/downloads/packages/eclipse-classic-372/indigosr2)
- - Start eclipse and chose from the menu "Help" - "Install New Software..."
+ - Download Eclipse Indigo (3.7.2) for your operating system from [http://www.eclipse.org/downloads/packages/eclipse-classic-372/indigosr2](http://www.eclipse.org/downloads/packages/eclipse-classic-372/indigosr2)
+ - Start Eclipse and chose from the menu "Help" - "Install New Software..."
  - Copy the following URL into the "Work with:" textfield: `http://download.scala-ide.org/releases-210/milestone/site`
  - Press "Enter"
  - Select "Scala IDE for Eclipse" from the available items. The other two are optional.
- - Continue using "Next >" and install the Scala IDE. You will have to re-start eclipse afterwards.
+ - Continue using "Next >" and install the Scala IDE. You will have to re-start Eclipse afterwards.
 
 ### Verify the Scala IDE installation
-To make sure you installed the Scala IDE correctly, create a small "Hello World" project in eclipse:
+To make sure you installed the Scala IDE correctly, create a small "Hello World" project in Eclipse:
 
  - Go to "File" - "New" - "Other..." and select "Scala Project" from the folder "Scala Wizards"
  - Chose a project name and select "Finish"
- - When you are asked to switch to the Scala perspective choose "Yes"
+ - If you are asked to switch to the Scala perspective choose "Yes"
  - Select "File" - "New" - "Scala Object" to create a new object
  - Enter `Hello` as the name for the object and put `greeter` as the package name above
  - Change the source code to the one given below \[1\]
  - Save the file and select "Run" - "Run" from the menu. Chose to run as "Scala Application"
+
+You should see a the hello world output in the Eclipse console.
 
 \[1\] Source code
 
@@ -98,6 +100,3 @@ To make sure you installed the Scala IDE correctly, create a small "Hello World"
     object Hello extends App {
       println("Hello, World!")
     }
-
-You should see a the hello world output in the eclipse console.
-
