@@ -88,6 +88,21 @@ If your project has an object with a `main` method (or an object extending the t
     >
 
 
+## Running the style checker
+
+As part of the grading process, we rung a style checker on the submitted source code to find commond coding style issues. To make sure that your code conforms to all our style rules, you can run the style checker yourself before submitting. The sbt task `styleCheck` does exactly that.
+
+    > styleCheck
+    [info] Checking file /Users/luc/Documents/epfl/teaching/progfun/assignments/src/main/scala/example/Lists.scala... OK!
+    [info] Processed 1 file(s)
+    [info] Found 0 errors
+    [info] Found 0 warnings
+    [info] Style Score: 100 out of 100
+    [success] Total time: 1 s, completed Aug 10, 2012 11:34:02 PM
+    > 
+
+
+
 ## Submitting your solution to coursera
 
 The sbt task `submit` allows you to submit your solution for the assignment. It will pack your source code into a `.jar` file and upload it to the coursera servers. Note that the code can only be submitted if there are no compilation errors.
