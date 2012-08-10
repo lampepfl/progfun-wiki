@@ -1,3 +1,5 @@
+---
+---
 In order to work on the programming assignments, you need to have the following tools installed on your machine:
 
  - JDK, the Java development kit, version 1.6 or 1.7
@@ -13,7 +15,7 @@ Please follow the instructions on this page carefully.
 `sudo apt-get install openjdk-7-jdk`
 
 **Fedora, Oracle, Red Had**: To install the JDK using yum, execute the following command in a terminal  
-`su -c 'yum install java-1.7.0-openjdk-devel'`
+`su -c "yum install java-1.7.0-openjdk-devel"`
 
 **Manual Installation**: To install the JDK manually on a Linux system, follow these steps:
 
@@ -82,17 +84,18 @@ To make sure you installed the Scala IDE correctly, create a small "Hello World"
 
  - Go to "File" - "New" - "Other..." and select "Scala Project" from the folder "Scala Wizards"
  - Chose a project name and select "Finish"
- - When you are asked to switch to the Scala perspective, say "Yes"
+ - When you are asked to switch to the Scala perspective choose "Yes"
  - Select "File" - "New" - "Scala Object" to create a new object
- - Enter "Hello" as the name for the object and put "greeter" as the package name above
- - Change the source code to the following:  
-```scala
-package greeter
-object Hello extends App {
-  println("Hello, World!")
-}
-```
-
+ - Enter `Hello` as the name for the object and put `greeter` as the package name above
+ - Change the source code to the one given below \[1\]
  - Save the file and select "Run" - "Run" from the menu. Chose to run as "Scala Application"
 
+\[1\] Source code
+
+    package greeter
+    object Hello extends App {
+      println("Hello, World!")
+    }
+
 You should see a the hello world output in the eclipse console.
+
