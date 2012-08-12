@@ -6,7 +6,7 @@ layout: default
   <head>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
   </head>
-  <body>
+  <body onload='parent.resizeIframe(document.body.scrollHeight)'>
     {{ content }}
   </body>
 </html>
