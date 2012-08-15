@@ -2,7 +2,7 @@
 title: Scala Tutorial
 ---
 
-This page gives a very brief tutorial on the Scala porgramming language.
+This page gives a very brief tutorial on the Scala programming language.
 
 ## Classes, traits, objects and packages
 
