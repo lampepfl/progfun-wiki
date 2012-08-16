@@ -88,4 +88,4 @@ Worksheets?
  - [Scala API](http://www.scala-lang.org/api/current/index.html#package)
  - _Programming in Scala_ book ([free online first edition](http://www.artima.com/pins1ed/))
  - [A Tour of Scala](http://docs.scala-lang.org/tutorials/tour/tour-of-scala.html)
-
+ - [Scala School!](http://twitter.github.com/scala_school/)
