@@ -1,4 +1,5 @@
 ---
+layout: page
 title: Scala Tutorial
 ---
 
@@ -77,7 +78,7 @@ have to call the scala compiler or the JVM runner manually.
 
 ## The Scala interpreter
 
-See [Sbt Tutorial](view?page=SbtTutorial) for how to run the
+See [Sbt Tutorial](?page=SbtTutorial) for how to run the
 interpreter from sbt. The interpreter can also be executed in eclipse
 (todo: put that in the eclipse tutorial)
 

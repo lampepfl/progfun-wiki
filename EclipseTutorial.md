@@ -5,7 +5,7 @@ title: Eclipse Tutorial
 
 We recommend using the Scala IDE for Eclipse to work on the programming assignments for this course. You are of course free to use any text editor or IDE - however we are not able to provide tutorials or support for other tools.
 
-The [Tools Setup](ToolsSetup.html) page explains how to install the Scala IDE for eclipse.
+The [Tools Setup](?page=ToolsSetup) page explains how to install the Scala IDE for eclipse.
 
 ## Opening the project in Eclipse
 
