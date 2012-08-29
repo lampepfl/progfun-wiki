@@ -90,3 +90,4 @@ Worksheets?
  - _Programming in Scala_ book ([free online first edition](http://www.artima.com/pins1ed/))
  - [A Tour of Scala](http://docs.scala-lang.org/tutorials/tour/tour-of-scala.html)
  - [Scala School!](http://twitter.github.com/scala_school/)
+ - [Scala Overview on StackOverflow](http://stackoverflow.com/tags/scala/info)
