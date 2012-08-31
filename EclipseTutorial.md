@@ -7,9 +7,15 @@ We recommend using the Scala IDE for Eclipse to work on the programming assignme
 
 The [Tools Setup](?page=ToolsSetup) page explains how to install the Scala IDE for eclipse.
 
-## Opening the project in Eclipse
+## Opening the Project in Eclipse
 
-The handout archives for the programming assignments already contain all the necessary project definition files for eclipse. In order to work on the project using the Scala IDE, you simply have to start up eclipse and select "File" - "Import" from the menu. In the folder "General", select the item "Existing Projects into Workspace" and click "Next >". In the textfield "Select root directory:" select the directory where you unpacked the downloaded handout archive, then click "Finish".
+The handout archives for the programming assignments already contain all the necessary project definition files for eclipse. Follow these steps to work on the project using the Scala IDE:
+
+1. Start up eclipse
+1. Select "File" - "Import" from the menu
+1. In the folder "General", select the item "Existing Projects into Workspace" and click "Next >"
+1. In the textfield "Select root directory:" select the directory where you unpacked the downloaded handout archive
+1. Click "Finish".
 
 
 ## Working with Eclipse

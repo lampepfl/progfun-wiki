@@ -3,11 +3,21 @@ layout: page
 title: Tools Setup
 ---
 
+<style type="text/css">
+.bigwarn {
+  color: #D00000;
+  font-weight: bold;
+  font-size: 1.3em;
+  font-height: 100%;
+}
+</style>
+
+
 In order to work on the programming assignments, you need to have the following tools installed on your machine:
 
  - JDK, the Java Development Kit, version 1.6 or 1.7
  - Sbt, a build tool for scala, version 0.12.0
- - Eclipse (version 3.7.2 / Indigo) and the Scala IDE (milestone for Scala 2.10.0-M5)
+ - Eclipse (version 3.7.2 / Indigo) and the Scala IDE (Milestone for Scala 2.9.x)
 
 Please follow the instructions on this page carefully.
 
@@ -73,16 +83,22 @@ Verify that sbt is installed correctly: open the Command Prompt and type `sbt sb
 
 
 ## Installing Eclipse and the Scala IDE
-**NOTE**: The Scala IDE requires Eclipse Indigo, version 3.7.2. Eclipse Juno, version 4.2, is **not** supported.
+
+<p>&nbsp;</p>
+<p class="bigwarn">Important note:</p>
+<p class="bigwarn">The Scala IDE requires Eclipse Indigo, version 3.7.2. Eclipse Juno, version 4.2, is not supported.</p>
+<p>&nbsp;</p>
+
+In the follwing steps we will install the latest Scala IDE Milestone for Scala 2.9.x.
 
  - Download Eclipse Indigo (3.7.2) for your operating system from [http://www.eclipse.org/downloads/packages/eclipse-classic-372/indigosr2](http://www.eclipse.org/downloads/packages/eclipse-classic-372/indigosr2)
  - Start Eclipse and chose from the menu "Help" - "Install New Software..."
- - Copy the following URL into the "Work with:" textfield: `http://download.scala-ide.org/releases-210/milestone/site`
+ - Copy the following URL into the "Work with:" textfield: `http://download.scala-ide.org/releases-29/milestone/site`
  - Press "Enter"
  - Select "Scala IDE for Eclipse" from the available items. The other two are optional.
  - Continue using "Next >" and install the Scala IDE. You will have to re-start Eclipse afterwards.
 
-### Verify the Scala IDE installation
+### Verify the Scala IDE Installation
 To make sure you installed the Scala IDE correctly, create a small "Hello World" project in Eclipse:
 
  - Go to "File" - "New" - "Other..." and select "Scala Project" from the folder "Scala Wizards"

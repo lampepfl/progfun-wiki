@@ -5,89 +5,71 @@ title: Scala Tutorial
 
 This page gives a very brief tutorial on the Scala programming language.
 
-## Classes, traits, objects, packages
-
-### _Hello, World!_ in Scala
-
-Here are two ways to define a program which outputs "Hello, World!" in
-Scala:
-
-```
-object HelloWorld extends App {
-  println("Hello, World!")
-}
-```
-
-or
-
-```
-object HelloWorld {
-  def main(args: Array[String]) {
-    println("Hello, World!")
-  }
-}
-```
-
-In Scala, the `main` or entry point method is defined in an `object`,
-not a `class` because `class`es needs to be instantiated and can have
-many instances at runtime.
+## Classes, Traits, Objects and Packages
 
 ### Classes
 
-In Scala, classes are templates defining fields and methods. Classes
-can be instantiated into many objects at runtime.
+Classes in Scala are very similar to classes in Java. They are templates containing fields and methods. Like in Java, classes can be instantiated using the `new` construct, there can be many "instances" (or "objects") of the same class.
 
-If your runtime objects are immutable, consider using a `case` class,
-which defines convenience methods for equality and pattern-matching.
+In Scala there exists a special kind of class named `case` classes. You will learn about case classes during the course.
+
+Classes in Scala cannot have static members. You can use objects (see below) to achieve similar functionalities as with static members in Java.
+
 
 ### Traits
 
-Traits are like interfaces in Java, but they can also contain concrete
-members.
+Traits are like interfaces in Java, but they can also contain concrete members, i.e. method implementations or field definitions.
+
 
 ### Objects
 
-Objects are like Java classes in which everything is
-static. Otherwise, Scala doesn't allow static methods or fields in
-regular classes.
+Object in Scala are like classes, but for every `object` definition there is only one single instance. It is not possible to create instances of objects using `new`, instead you can just access the members (methods or fields) of an object using its name.
+
 
 ### Packages
 
-Adding a statement such as `package foo.bar` at the top of a file
-makes the code in a file part of the package `foo.bar`. You can then
-do `import foo.bar._` to have everything from package `foo.bar` which
-can be scattered across many files available. If you define an `object
-baz` in package `foo.bar`, you can import that specific object with
-`import foo.bar.baz`. Similarly, you can import everything in `object
-baz` with `import foo.bar.baz._`.
+Adding a statement such as `package foo.bar` at the top of a file makes the code in a file part of the package `foo.bar`. You can then do `import foo.bar._` to make everything from package `foo.bar` available in your code. The content of a package can be scattered across many files. If you define a `class MyClass` in package `foo.bar`, you can import that specific class (and not anything else from that package) with `import foo.bar.MyClass`.
 
-## Source files, classfiles and the JVM
+In Scala, everything can be imported, not only class names. So for instance if you have an `object baz` in package `foo.bar`, then `import foo.bar.baz._` would import all the members of that object.
 
-Scala sources are stored as `.scala` files.
+### _Hello, World!_ in Scala
 
- - packages should be reflected in directory structure, otherwise problems in eclipse
- - multiple classes in one file possible
- - usually one source file per class, or per class hierarchy
+Here are two ways to define a program which outputs "Hello, World!" in Scala:
 
-The scala compiler compiles `.scala` source files to `.class` files,
-like the Java compiler. ... classfiles are bytecode for the JVM, etc.
+    object HelloWorld extends App {
+      println("Hello, World!")
+    }
 
-This is all automated if you are using sbt or eclipse, so you don't
-have to call the scala compiler or the JVM runner manually.
+or
+
+    object HelloWorld {
+      def main(args: Array[String]) {
+        println("Hello, World!")
+      }
+    }
+
+In Scala, the `main` or entry point method is defined in an `object`. An object can be made executable by either adding extending the type `App` or by adding a method `def main(args: Array[String])`.
 
 
-## The Scala interpreter
+## Source Files, Classfiles and the JVM
 
-See [Sbt Tutorial](?page=SbtTutorial) for how to run the
-interpreter from sbt. The interpreter can also be executed in eclipse
-(todo: put that in the eclipse tutorial)
+Scala source code is stored in text files with the extension `.scala`. Typically Scala programmers create one source file for each class, or one source file for a class hierarchy: In fact, Scala allows multiple classes and objects do be defined in the same source file.
 
-Worksheets?
+- The name of a Scala source file can be chosen freely, but it is recommended to use the name of a class which is defined in that file.
+- Package hierarchies should be reflected in directory structure: a source file defining `class C` in package `foo.bar` should be stored in a subdirecotory as `foo/bar/C.scala`. Scala does not really enforce this convention, but some tools such as the Scala IDE for eclipse might have problems otherwise.
 
-## Links with more tutorials and documentation
+The scala compiler compiles `.scala` source files to `.class` files, like the Java compiler. Classfiles are binary files containing machine code for the Java Virtual Machine. In order to run a Scala program, the JVM has to know the directory where classfiles are stored. This parameter is called the "classpath".
 
- - [Scala API](http://www.scala-lang.org/api/current/index.html#package)
- - _Programming in Scala_ book ([free online first edition](http://www.artima.com/pins1ed/))
- - [A Tour of Scala](http://docs.scala-lang.org/tutorials/tour/tour-of-scala.html)
- - [Scala School!](http://twitter.github.com/scala_school/)
- - [Scala Overview on StackOverflow](http://stackoverflow.com/tags/scala/info)
+If you are using eclipse or sbt to compile and run your Scala code, you don't need to do any of the above manually - these tools take care of invoking the Scala compiler and the JVM with the correct arguments.
+
+
+
+## External Documentation
+
+There is a large number of online resources available for learning Scala. The list below contains a few links that we think are the most useful for our class.
+
+- Book _Programming in Scala_ by Martin Odersky et al.: The second edition can be ordered at [Artima](http://www.artima.com/shop/programming_in_scala_2ed) or [Amazon](http://www.amazon.com/Programming-Scala-Comprehensive-Step-Step/dp/0981531644/ref=dp_ob_title_bk), the first edition is [available online for free](http://www.artima.com/pins1ed/)
+- [A Tour of Scala](http://docs.scala-lang.org/tutorials/tour/tour-of-scala.html): Tutorial indroducing the main concepts of Scala
+- The [Scala API](http://www.scala-lang.org/api/current/index.html#package): Scaladoc API documentation for the Scala standard library
+- [Scala School!](http://twitter.github.com/scala_school/): A Scala tutorial by Twitter
+- [Scala Overview on StackOverflow](http://stackoverflow.com/tags/scala/info): A list of useful questions sorted by topic

@@ -9,11 +9,13 @@ We use sbt for building, testing, running and submitting assignments. This tutor
 
 In order to start sbt, open a terminal ("Command Prompt" in Windows) and navigate to the directory of the assignment you are working on. Typing `sbt` will open the sbt command prompt.
 
+    shell$ cd /path/to/progfun-project-directory
+    shell$ sbt
     > _
 
 
 
-## Compiling your code
+## Compiling your Code
 
 The `compile` task will compile the source code of the assignment which is located in the directory `src/main/scala`.
 
@@ -25,7 +27,7 @@ The `compile` task will compile the source code of the assignment which is locat
 If the source code contains errors, the error messages from the compiler will be displayed.
 
 
-## Running the Scala interpreter
+## Running the Scala Interpreter
 
 You can start the Scala interpreter inside sbt using the `console` task. The interpreter (also called REPL, for "read-eval-print loop") is useful for trying out snippets of Scala code. Note that the interpreter can only be started if there are no compilation errors in your code.
 
@@ -51,7 +53,7 @@ In order to quit the interpreter and get back to sbt, type `ctrl-d`.
     > 
 
 
-## Testing your code
+## Testing your Code
 
 The directory `src/test/scala` contains unit tests for the project. In order to run these tests in sbt, you can use the `test` command.
 
@@ -71,7 +73,7 @@ The directory `src/test/scala` contains unit tests for the project. In order to 
     > 
 
 
-## Running your code
+## Running your Code
 
 If your project has an object with a `main` method (or an object extending the trait `App`), then you can run the code in sbt easily by typing `run`. In case sbt finds multiple main methods, it will ask you which one you'd like to execute.
 
@@ -89,7 +91,7 @@ If your project has an object with a `main` method (or an object extending the t
     >
 
 
-## Running the style checker
+## Running the Style Checker
 
 As part of the grading process, we rung a style checker on the submitted source code to find commond coding style issues. To make sure that your code conforms to all our style rules, you can run the style checker yourself before submitting. The sbt task `styleCheck` does exactly that.
 
@@ -104,7 +106,7 @@ As part of the grading process, we rung a style checker on the submitted source 
 
 
 
-## Submitting your solution to coursera
+## Submitting your Solution to Coursera
 
 The sbt task `submit` allows you to submit your solution for the assignment. It will pack your source code into a `.jar` file and upload it to the coursera servers. Note that the code can only be submitted if there are no compilation errors.
 
