@@ -91,25 +91,58 @@ Verify that sbt is installed correctly: open the Command Prompt and type `sbt sb
 
 In the follwing steps we will install the latest Scala IDE Milestone for Scala 2.9.x.
 
- - Download Eclipse Indigo (3.7.2) for your operating system from [http://www.eclipse.org/downloads/packages/eclipse-classic-372/indigosr2](http://www.eclipse.org/downloads/packages/eclipse-classic-372/indigosr2)
- - Start Eclipse and chose from the menu "Help" - "Install New Software..."
- - Copy the following URL into the "Work with:" textfield: `http://download.scala-ide.org/releases-29/milestone/site`
- - Press "Enter"
- - Select "Scala IDE for Eclipse" from the available items. The other two are optional.
- - Continue using "Next >" and install the Scala IDE. You will have to re-start Eclipse afterwards.
+1. Download Eclipse Indigo (3.7.2) for your operating system from [http://www.eclipse.org/downloads/packages/eclipse-classic-372/indigosr2](http://www.eclipse.org/downloads/packages/eclipse-classic-372/indigosr2)
+1. Start Eclipse and chose from the menu "Help" - "Install New Software..."
+1. Copy the following URL into the "Work with:" textfield: `http://download.scala-ide.org/releases-29/milestone/site`
+1. Press "Enter"
+1. Select "Scala IDE for Eclipse" from the available items. The other two are optional.
+1. Continue using "Next >" and install the Scala IDE. You will have to re-start Eclipse afterwards.
+
+
+<p><img src="https://raw.github.com/lrytz/progfun-wiki/gh-pages/images/eclipse-install.png"/></p>
+
+
+### Required Settings & Troubleshooting
+
+<p class="bigwarn">After installing the Scala IDE, you need to apply the following preferences in eclipse.</p>
+
+
+#### Switch to the Scala Perspective
+
+By default, eclipse remains in the "Java" perspective after installing the Scala IDE. In this perspective, the Scala-specific menu items will not be available.
+
+Go to "Window" - "Open Perspective" - "Other" in the menu and chose "Scala".
+
+
+#### Increase the Maximum Hap Size
+
+The default eclipse memory configuration is too small for the Scala IDE. Increase the maximal memory by following the "Eclipse Configuration" instructions on this page:  
+[http://scala-ide.org/docs/user/advancedsetup.html#Eclipse_Configuration](http://scala-ide.org/docs/user/advancedsetup.html#Eclipse_Configuration)
+
+
+#### Disable Code Folding
+
+By default, eclipse enables code folding for class comments. In our programming assignments we often write important instructions in class comments, and with code folding enabled you risk to overlook these instructions.
+
+1. In the menu, go to "Eclipse" - "Preferences..."
+1. Navigate to "Java" - "Editor" - "Folding"
+1. Disable all options in the category "Initially fold these elements:"
+
+<p><img src="https://raw.github.com/lrytz/progfun-wiki/gh-pages/images/eclipse-folding.png"/></p>
+
 
 
 
 ### Verify the Scala IDE Installation
 To make sure you installed the Scala IDE correctly, create a small "Hello World" project in Eclipse:
 
- - Go to "File" - "New" - "Other..." and select "Scala Project" from the folder "Scala Wizards"
- - Chose a project name and select "Finish"
- - If you are asked to switch to the Scala perspective choose "Yes"
- - Select "File" - "New" - "Scala Object" to create a new object
- - Enter `Hello` as the name for the object and put `greeter` as the package name above
- - Change the source code to the one given below \[1\]
- - Save the file and select "Run" - "Run" from the menu. Chose to run as "Scala Application"
+1. Go to "File" - "New" - "Other..." and select "Scala Project" from the folder "Scala Wizards"
+1. Chose a project name and select "Finish"
+1. If you are asked to switch to the Scala perspective choose "Yes"
+1. Select "File" - "New" - "Scala Object" to create a new object
+1. Enter `Hello` as the name for the object and put `greeter` as the package name above
+1. Change the source code to the one given below \[1\]
+1. Save the file and select "Run" - "Run" from the menu. Chose to run as "Scala Application"
 
 You should see a the hello world output in the Eclipse console.
 
