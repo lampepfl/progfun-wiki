@@ -9,9 +9,9 @@ We use sbt for building, testing, running and submitting assignments. This tutor
 
 In order to start sbt, open a terminal ("Command Prompt" in Windows) and navigate to the directory of the assignment you are working on. Typing `sbt` will open the sbt command prompt.
 
-    shell$ cd /path/to/progfun-project-directory
+    shell$ cd /path/to/progfun-project-directory                        # This is the shell of the operating system
     shell$ sbt
-    > _
+    > _                                                                 # This is the sbt shell
 
 
 ## Running the Scala Interpreter
@@ -20,13 +20,13 @@ You can start the Scala interpreter inside sbt using the `console` task. The int
 
 In order to quit the interpreter and get back to sbt, type `ctrl-d`.
 
-    > console
+    > console                                                           # In the sbt shell, we run the task `console`
     [info] Starting scala interpreter...
     Welcome to Scala version 2.10.0-M5 (Java HotSpot(TM) 64-Bit Server VM, Java 1.6.0_33).
     Type in expressions to have them evaluated.
     Type :help for more information.
     
-    scala> println("Oh, hai!")
+    scala> println("Oh, hai!")                                          # This is the Scala REPL, type some Scala code
     Oh, hai!
     
     scala> val l = List(1, 2, 3)
@@ -35,9 +35,9 @@ In order to quit the interpreter and get back to sbt, type `ctrl-d`.
     scala> val squares = l.map(x => x * x)
     squares: List[Int] = List(1, 4, 9)
     
-    scala>
+    scala>                                                              # Type [ctrl-d] to exit the Scala REPL
     [success] Total time: 20 s, completed Aug 10, 2012 10:08:23 PM
-    > 
+    >                                                                   # We're back to the sbt shell
 
 
 ## Compiling your Code
