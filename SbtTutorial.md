@@ -14,19 +14,6 @@ In order to start sbt, open a terminal ("Command Prompt" in Windows) and navigat
     > _
 
 
-
-## Compiling your Code
-
-The `compile` task will compile the source code of the assignment which is located in the directory `src/main/scala`.
-
-    > compile
-    [info] Compiling 4 Scala sources to /Users/luc/example/target/scala-2.10.0-M5/classes...
-    [success] Total time: 2 s, completed Aug 10, 2012 10:00:26 PM
-    > 
-
-If the source code contains errors, the error messages from the compiler will be displayed.
-
-
 ## Running the Scala Interpreter
 
 You can start the Scala interpreter inside sbt using the `console` task. The interpreter (also called REPL, for "read-eval-print loop") is useful for trying out snippets of Scala code. Note that the interpreter can only be started if there are no compilation errors in your code.
@@ -51,6 +38,18 @@ In order to quit the interpreter and get back to sbt, type `ctrl-d`.
     scala>
     [success] Total time: 20 s, completed Aug 10, 2012 10:08:23 PM
     > 
+
+
+## Compiling your Code
+
+The `compile` task will compile the source code of the assignment which is located in the directory `src/main/scala`.
+
+    > compile
+    [info] Compiling 4 Scala sources to /Users/luc/example/target/scala-2.10.0-M5/classes...
+    [success] Total time: 2 s, completed Aug 10, 2012 10:00:26 PM
+    > 
+
+If the source code contains errors, the error messages from the compiler will be displayed.
 
 
 ## Testing your Code
