@@ -116,7 +116,7 @@ Go to "Window" - "Open Perspective" - "Other" in the menu and chose "Scala".
 
 #### Increase the Maximum Hap Size
 
-The default eclipse memory configuration is too small for the Scala IDE. Increase the maximal memory by following the "Eclipse Configuration" instructions on this page:  
+The default eclipse memory configuration is inadequate for the Scala IDE. Increase the maximal memory by following the "Eclipse Configuration" instructions on this page:  
 [http://scala-ide.org/docs/user/advancedsetup.html#Eclipse_Configuration](http://scala-ide.org/docs/user/advancedsetup.html#Eclipse_Configuration)
 
 
