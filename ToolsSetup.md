@@ -114,7 +114,7 @@ By default, eclipse remains in the "Java" perspective after installing the Scala
 Go to "Window" - "Open Perspective" - "Other" in the menu and chose "Scala".
 
 
-#### Increase the Maximum Hap Size
+#### Increase the Maximum Heap Size
 
 The default eclipse memory configuration is inadequate for the Scala IDE. Increase the maximal memory by following the "Eclipse Configuration" instructions on this page:  
 [http://scala-ide.org/docs/user/advancedsetup.html#Eclipse_Configuration](http://scala-ide.org/docs/user/advancedsetup.html#Eclipse_Configuration)
