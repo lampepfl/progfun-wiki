@@ -137,12 +137,16 @@ By default, eclipse enables code folding for class comments. In our programming 
 To make sure you installed the Scala IDE correctly, create a small "Hello World" project in Eclipse:
 
 1. Go to "File" - "New" - "Other..." and select "Scala Project" from the folder "Scala Wizards"
-1. Chose a project name and select "Finish"
+1. Chose a project name and select "Finish"  
+  <img src="https://raw.github.com/lrytz/progfun-wiki/gh-pages/images/eclipse-new-project.png"/>
 1. If you are asked to switch to the Scala perspective choose "Yes"
 1. Select "File" - "New" - "Scala Object" to create a new object
-1. Enter `Hello` as the name for the object and put `greeter` as the package name above
+1. Enter `Hello` as the name for the object and put `greeter` as the package name above  
+  <img src="https://raw.github.com/lrytz/progfun-wiki/gh-pages/images/eclipse-new-object.png"/>
 1. Change the source code to the one given below \[1\]
-1. Save the file and select "Run" - "Run" from the menu. Chose to run as "Scala Application"
+1. Save the file and select "Run" - "Run" from the menu. Chose to run as "Scala Application"  
+  <img src="https://raw.github.com/lrytz/progfun-wiki/gh-pages/images/eclipse-run-as.png"/>
+
 
 You should see a the hello world output in the Eclipse console.
 
