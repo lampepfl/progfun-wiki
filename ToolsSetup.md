@@ -82,7 +82,7 @@ Verify that sbt is installed correctly: open the `Terminal` application from `/A
 Verify that sbt is installed correctly: open the Command Prompt and type `sbt sbt-version`, you should see the version number of sbt. If you have problems installing sbt, ask for help on the forums.
 
 
-## Installing Eclipse and the Scala IDE
+## Installing Eclipse and the Scala IDE (Linux / Mac OS X / Windows)
 
 <p>&nbsp;</p>
 <p class="bigwarn">Important note:</p>
