@@ -67,6 +67,10 @@ Verify that sbt is installed correctly: Open a new terminal (to apply the change
 
 ### Mac OS X
 
+If you use the [homebrew](http://mxcl.github.com/homebrew/) package manager, simply type `brew install sbt` in a Terminal prompt.
+
+Otherwise, install sbt by following these steps:
+
  - Download sbt from here: [http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.0/sbt.tgz](http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.0/sbt.tgz)
  - Unpack the archive to a directory of your choice
  - Add the `bin/` directory to the `PATH` environment variable. Open the file `~/.bash_profile` in an editor (create it if it doesn't exist) and add the following line  
