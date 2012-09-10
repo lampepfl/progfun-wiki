@@ -79,7 +79,7 @@ Verify that sbt is installed correctly: Open a new terminal (to apply the change
  - Download the sbt installer from here: [http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.0/sbt.msi](http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.0/sbt.msi)
  - Run the installer
 
-Verify that sbt is installed correctly: open the Command Prompt and type `sbt sbt-version`, you should see the version number of sbt. If you have problems installing sbt, ask for help on the forums.
+Verify that sbt is installed correctly: open the Command Prompt and type `sbt sbt-version`, you should see the version number of sbt (the first time you run it, sbt will download libraries from the internet). If you have problems installing sbt, ask for help on the forums.
 
 
 ## Installing Eclipse and the Scala IDE (Linux / Mac OS X / Windows)
@@ -116,15 +116,18 @@ Go to "Window" - "Open Perspective" - "Other" in the menu and chose "Scala".
 
 #### Increase the Maximum Heap Size
 
-The default eclipse memory configuration is inadequate for the Scala IDE. Increase the maximal memory by following the "Eclipse Configuration" instructions on this page:  
-[http://scala-ide.org/docs/user/advancedsetup.html#Eclipse_Configuration](http://scala-ide.org/docs/user/advancedsetup.html#Eclipse_Configuration)
+The default eclipse memory configuration is inadequate for the Scala IDE. To adjust it, open the file `eclipse/eclipse.ini` from your eclipse installation directory (on Mac OS X: `eclipse/Eclipse.app/Contents/MacOS/eclipse.ini`<sup>[1]</sup>) in a text editor.
+
+Find the line with `-Xmx512m`, change it to `-Xmx1024m` and save the file.
+
+<sub>[1] Right-click the file `Eclipse.app` in the Finder and select "Show Package Content".</sub>
 
 
 #### Disable Code Folding
 
 By default, eclipse enables code folding for class comments. In our programming assignments we often write important instructions in class comments, and with code folding enabled you risk to overlook these instructions.
 
-1. In the menu, go to "Eclipse" - "Preferences..."
+1. In the menu, go to "Window" - "Preferences..." (on Mac OS X: "Eclipse" - "Preferences...")
 1. Navigate to "Java" - "Editor" - "Folding"
 1. Disable all options in the category "Initially fold these elements:"
 
