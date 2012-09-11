@@ -32,7 +32,7 @@ Please follow the instructions on this page carefully.
 
 * **Manual Installation**: To install the JDK manually on a Linux system, follow these steps:
 
-  1. Download the `.tar.gz` archive from [http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1637583.html](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1637583.html)
+  1. Download the `.tar.gz` archive from [http://www.oracle.com/technetwork/java/javase/downloads/jdk7u7-downloads-1836413.html](http://www.oracle.com/technetwork/java/javase/downloads/jdk7u7-downloads-1836413.html)
   1. Unpack the downloaded archive to a directory of your choice
   1. Add the `bin/` directory of the extracted JDK to the `PATH` environment variable. Open the file `~/.bashrc` in an editor (create it if it doesn't exist) and add the following line  
   ```export PATH=/PATH/TO/YOUR/jdk1.7.0-VERSION/bin:$PATH```
@@ -47,7 +47,7 @@ To verify your JDK installation, open the `Terminal` application in `/Applicatio
 
 ### Windows
 
- - Download the JDK installer for Windows from [http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1637583.html](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1637583.html)
+ - Download the JDK installer for Windows from [http://www.oracle.com/technetwork/java/javase/downloads/jdk7u7-downloads-1836413.html](http://www.oracle.com/technetwork/java/javase/downloads/jdk7u7-downloads-1836413.html)
  - Run the installer
  - Add the `bin\` directory of the installed JDK to the `PATH` environment variable, as described here: [http://www.java.com/en/download/help/path.xml](http://www.java.com/en/download/help/path.xml)
 
