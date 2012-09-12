@@ -67,7 +67,7 @@ Verify that sbt is installed correctly: Open a new terminal (to apply the change
 
 ### Mac OS X
 
-If you use the [homebrew](http://mxcl.github.com/homebrew/) package manager, simply type `brew install sbt` in a Terminal prompt.
+If you use the [homebrew](http://mxcl.github.com/homebrew/) package manager, simply type `brew update` and then `brew install sbt` in a Terminal prompt.
 
 Otherwise, install sbt by following these steps:
 
