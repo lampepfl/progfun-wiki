@@ -12,4 +12,4 @@ The hard deadline is defined to be 5 days after the soft deadline: no more submi
 
 ### Time Zones
 
-Please be **careful about time zones**: every deadline is defined in the UTC time zone (UTC +00). Make sure you don't miss a deadline by forgetting to convert the time of a deadline to your local time zone.
+Please be **careful about time zones**: every deadline is defined in the [UTC time zone (UTC +00)](http://www.timeanddate.com/worldclock/city.html?n=1440). Make sure you don't miss a deadline by forgetting to convert the time of a deadline to your local time zone.
