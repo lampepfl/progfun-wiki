@@ -10,6 +10,6 @@ You can **only** achieve the maximal score if you submit before the soft deadlin
 The hard deadline is defined to be 5 days after the soft deadline: no more submissions are accepted once the hard deadline has passed.
 
 
-## Time Zones
+### Time Zones
 
 Please be **careful about time zones**: every deadline is defined in the UTC time zone (UTC +00). Make sure you don't miss a deadline by forgetting to convert the time of a deadline to your local time zone.
