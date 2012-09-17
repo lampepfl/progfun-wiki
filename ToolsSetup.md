@@ -16,8 +16,8 @@ title: Tools Setup
 In order to work on the programming assignments, you need to have the following tools installed on your machine:
 
  - JDK, the Java Development Kit, version 1.6 or 1.7
- - Sbt, a build tool for scala, version 0.12.0
- - Eclipse (version 3.7.2 / Indigo) and the Scala IDE (Milestone for Scala 2.9.x)
+ - Sbt, a build tool for Scala, version 0.12.0
+ - The Scala IDE for Eclipse and the Scala Worksheet
 
 Please follow the instructions on this page carefully.
 
@@ -86,67 +86,23 @@ Verify that sbt is installed correctly: Open a new terminal (to apply the change
 Verify that sbt is installed correctly: open the Command Prompt and type `sbt sbt-version`, you should see the version number of sbt (the first time you run it, sbt will download libraries from the internet). If you have problems installing sbt, ask for help on the forums.
 
 
-## Installing Eclipse and the Scala IDE (Linux / Mac OS X / Windows)
+## Installing the Scala IDE for Eclipse with the Scala Worksheet (Linux / Mac OS X / Windows)
 
-<p>&nbsp;</p>
-<p class="bigwarn">Important note:</p>
-<p class="bigwarn">The Scala IDE requires Eclipse Indigo, version 3.7.2. Eclipse Juno, version 4.2, is not supported.</p>
-<p>&nbsp;</p>
+You can download the Scala IDE for eclipse with the Scala Worksheet pre-installed from the following URL:
 
-In the follwing steps we will install the latest Scala IDE Milestone for Scala 2.9.x.
+[http://typesafe.com/stack/scala_ide_download](http://typesafe.com/stack/scala_ide_download)
 
-1. Download Eclipse Indigo (3.7.2) for your operating system from [http://www.eclipse.org/downloads/packages/eclipse-classic-372/indigosr2](http://www.eclipse.org/downloads/packages/eclipse-classic-372/indigosr2)
-1. Start Eclipse and chose from the menu "Help" - "Install New Software..."
-1. Copy the following URL into the "Work with:" textfield: `http://download.scala-ide.org/releases-29/milestone/site`
-1. Press "Enter"
-1. Select "Scala IDE for Eclipse" from the available items. The other two are optional.
-1. Continue using "Next >" and install the Scala IDE. You will have to re-start Eclipse afterwards.
-
-
-<p><img src="https://raw.github.com/lrytz/progfun-wiki/gh-pages/images/eclipse-install.png"/></p>
-
-
-### Required Settings & Troubleshooting
-
-<p class="bigwarn">After installing the Scala IDE, you need to apply the following preferences in eclipse.</p>
-
-
-#### Switch to the Scala Perspective
-
-By default, eclipse remains in the "Java" perspective after installing the Scala IDE. In this perspective, the Scala-specific menu items will not be available.
-
-Go to "Window" - "Open Perspective" - "Other" in the menu and chose "Scala".
-
-
-#### Increase the Maximum Heap Size
-
-The default eclipse memory configuration is inadequate for the Scala IDE. To adjust it, open the file `eclipse/eclipse.ini` from your eclipse installation directory (on Mac OS X: `eclipse/Eclipse.app/Contents/MacOS/eclipse.ini`<sup>[1]</sup>) in a text editor.
-
-Find the line with `-Xmx512m`, change it to `-Xmx1024m` and save the file.
-
-<sub>[1] Right-click the file `Eclipse.app` in the Finder and select "Show Package Content".</sub>
-
-
-#### Disable Code Folding
-
-By default, eclipse enables code folding for class comments. In our programming assignments we often write important instructions in class comments, and with code folding enabled you risk to overlook these instructions.
-
-1. In the menu, go to "Window" - "Preferences..." (on Mac OS X: "Eclipse" - "Preferences...")
-1. Navigate to "Java" - "Editor" - "Folding"
-1. Disable all options in the category "Initially fold these elements:"
-
-<p><img src="https://raw.github.com/lrytz/progfun-wiki/gh-pages/images/eclipse-folding.png"/></p>
+After downloading the archive for your operating system, simply unpack it start eclipse. Eclipse requires you to select a workspace on startup. We recommmend you create one workspace directory for this class and use it for all assignments.
 
 
 
+### Testing the Scala IDE Installation
 
-### Verify the Scala IDE Installation
-To make sure you installed the Scala IDE correctly, create a small "Hello World" project in Eclipse:
+To familiarize yourself with the Scala IDE, create a small "Hello World" project in eclipse:
 
 1. Go to "File" - "New" - "Other..." and select "Scala Project" from the folder "Scala Wizards"
 1. Chose a project name and select "Finish"  
   <img src="https://raw.github.com/lrytz/progfun-wiki/gh-pages/images/eclipse-new-project.png"/>
-1. If you are asked to switch to the Scala perspective choose "Yes"
 1. Select "File" - "New" - "Scala Object" to create a new object
 1. Enter `Hello` as the name for the object and put `greeter` as the package name above  
   <img src="https://raw.github.com/lrytz/progfun-wiki/gh-pages/images/eclipse-new-object.png"/>
@@ -163,3 +119,4 @@ You should see a the hello world output in the Eclipse console.
     object Hello extends App {
       println("Hello, World!")
     }
+
