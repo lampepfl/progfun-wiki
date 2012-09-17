@@ -92,7 +92,7 @@ If your project has an object with a `main` method (or an object extending the t
 
 ## Running the Style Checker
 
-As part of the grading process, we rung a style checker on the submitted source code to find commond coding style issues. To make sure that your code conforms to all our style rules, you can run the style checker yourself before submitting. The sbt task `styleCheck` does exactly that.
+As part of the grading process, we run a style checker on the submitted source code to find common coding style issues. To make sure that your code conforms to all our style rules, you can run the style checker yourself before submitting. The sbt task `styleCheck` does exactly that.
 
     > styleCheck
     [info] Checking file /Users/luc/Documents/epfl/teaching/progfun/assignments/src/main/scala/example/Lists.scala... OK!
