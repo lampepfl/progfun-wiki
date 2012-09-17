@@ -19,7 +19,13 @@ In order to work on the programming assignments, you need to have the following 
  - Sbt, a build tool for Scala, version 0.12.0
  - The Scala IDE for Eclipse and the Scala Worksheet
 
-Please follow the instructions on this page carefully.
+Please follow the instructions on this page carefully. You can also watch one of the following videos that explain how to set up your machine:
+
+<table><tr>
+  <td style="border:0"><a href="../lecture/23" class="btn">Setup Video for Linux</a></td>
+  <td style="border:0"><a href="../lecture/25" class="btn">Setup Video for Mac OS X</a></td>
+  <td style="border:0"><a href="../lecture/21" class="btn">Setup Video for Windows</a></td>
+</tr></table>
 
 ## Installing the JDK
 
@@ -93,12 +99,6 @@ You can download the Scala IDE for eclipse with the Scala Worksheet pre-installe
 [http://typesafe.com/stack/scala_ide_download](http://typesafe.com/stack/scala_ide_download)
 
 After downloading the archive for your operating system, simply unpack it start eclipse. Eclipse requires you to select a workspace on startup. We recommmend you create one workspace directory for this class and use it for all assignments.
-
-
-
-We recommend using the Scala IDE for Eclipse to work on the programming assignments for this course. You are of course free to use any text editor or IDE - however we are not able to provide tutorials or support for other tools.
-
-The [Tools Setup](?page=ToolsSetup) page explains how to install the Scala IDE for eclipse.
 
 
 ### Hello World: Scala IDE and the Scala Worksheet
