@@ -96,7 +96,12 @@ After downloading the archive for your operating system, simply unpack it start 
 
 
 
-### Testing the Scala IDE Installation
+We recommend using the Scala IDE for Eclipse to work on the programming assignments for this course. You are of course free to use any text editor or IDE - however we are not able to provide tutorials or support for other tools.
+
+The [Tools Setup](?page=ToolsSetup) page explains how to install the Scala IDE for eclipse.
+
+
+### Hello World: Scala IDE and the Scala Worksheet
 
 To familiarize yourself with the Scala IDE, create a small "Hello World" project in eclipse:
 
@@ -119,4 +124,19 @@ You should see a the hello world output in the Eclipse console.
     object Hello extends App {
       println("Hello, World!")
     }
+
+
+### Creating a Scala Worksheet
+
+Creating a Scala Worksheet is very easy:
+
+1. Right-click on the package `greeter` in the hello world project that you just created
+1. Select "New" - "Scala Worksheet"
+1. Choose a name for your worksheet
+
+Now you can type some Scala code into the worksheet. Every time you save the file, the content of the worksheet will be evaluated. Copy the following code into the object of your worksheet:
+
+      val x = 1                                       //> x  : Int = 1
+      def increase(i: Int) = i + 1                    //> increase: (i: Int)Int
+      increase(x)                                     //> res0: Int = 2
 
