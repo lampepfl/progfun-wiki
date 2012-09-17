@@ -14,14 +14,11 @@ title: Additional Resources
   
   - Structure and Interpretation of Computer Programs. Harold Abelson
     and Gerald J. Sussman. 2nd edition. MIT Press 1996.
-	
 	[Full text online](http://mitpress.mit.edu/sicp/).
   	
   - Programming in Scala. Martin Odersky, Lex Spoon and Bill
     Venners. 2nd edition. Artima 2010.
-	
 	[Full text of 1st edition online](http://www.artima.com/pins1ed/).
   	
   - Scala for the Impatient.
-  
     [First part available for download](http://typesafe.com/resources/scala-for-the-impatient).
