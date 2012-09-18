@@ -15,7 +15,7 @@ title: Learning Resources
   
   - _**Structure and Interpretation of Computer Programs**_. _Harold Abelson and Gerald J. Sussman. 2nd edition. MIT Press 1996._ - \[[**Full text available online**](http://mitpress.mit.edu/sicp/)\].
   - _**Programming in Scala**_. _Martin Odersky, Lex Spoon and Bill Venners. 2nd edition. Artima 2010._ - \[[**Full text of 1st edition available online**](http://www.artima.com/pins1ed/)\].
-  <p>Artima has graciously provided a 25% discount on the 2nd edition of _Programming in Scala_ to all participants of this course. To receive the discount, simply visit [http://www.artima.com/shop/programming_in_scala_2ed](http://www.artima.com/shop/programming_in_scala_2ed) and during checkout, please use the coupon code: COURSERA-ODERSKY to have the discount applied.</p>
+  <p>Artima has graciously provided a 25% discount on the 2nd edition of _Programming in Scala_ to all participants of this course. To receive the discount, simply visit <a href="http://www.artima.com/shop/programming_in_scala_2ed">http://www.artima.com/shop/programming_in_scala_2ed</a> and during checkout, please use the coupon code: COURSERA-ODERSKY to have the discount applied.</p>
   	
   - _**Scala for the Impatient**_. _Cay Horstmann. Addison-Wesley 2012._ - \[[**First part available for download**](http://typesafe.com/resources/scala-for-the-impatient).\]
   - _**Scala in Depth**_. _Joshua D. Suereth. Manning 2012._ - \[[**Available for purchase**](http://www.manning.com/suereth/)\].
