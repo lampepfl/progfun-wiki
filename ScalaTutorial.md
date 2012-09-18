@@ -66,10 +66,4 @@ If you are using eclipse or sbt to compile and run your Scala code, you don't ne
 
 ## External Documentation
 
-There is a large number of online resources available for learning Scala. The list below contains a few links that we think are the most useful for our class.
-
-- Book _Programming in Scala_ by Martin Odersky et al.: The second edition can be ordered at [Artima](http://www.artima.com/shop/programming_in_scala_2ed) or [Amazon](http://www.amazon.com/Programming-Scala-Comprehensive-Step-Step/dp/0981531644/ref=dp_ob_title_bk), the first edition is [available online for free](http://www.artima.com/pins1ed/)
-- [A Tour of Scala](http://docs.scala-lang.org/tutorials/tour/tour-of-scala.html): Tutorial indroducing the main concepts of Scala
-- The [Scala API](http://www.scala-lang.org/api/current/index.html#package): Scaladoc API documentation for the Scala standard library
-- [Scala School!](http://twitter.github.com/scala_school/): A Scala tutorial by Twitter
-- [Scala Overview on StackOverflow](http://stackoverflow.com/tags/scala/info): A list of useful questions sorted by topic
+There is a large number of online resources available for learning Scala. The [Learning Resources](?page=LearningResources) wiki page contains a few links that we think are the most useful for our class.
