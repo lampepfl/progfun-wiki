@@ -40,10 +40,10 @@ accumulators. Instead of:
 	  var b = 1
 	  var i = 0
 	  while (i < n) {
-	    var prev_a = a
-		a = b
-		b = prev_a + b
-		i = i + 1
+        val prev_a = a
+        a = b
+        b = prev_a + b
+        i = i + 1
 	  }
 	  a
 	}
@@ -55,6 +55,9 @@ prefer:
 	    if (i == n) a else iter(i+1, b, a+b)
 	  iter(0, 0, 1)
 	}
+
+If you're just using a `var` to store a local immutable result, you
+can use a `val` instead.
 
 ## Other styling issues?
 
