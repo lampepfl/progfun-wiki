@@ -1,28 +1,22 @@
 ---
 layout: page
-title: Additional Resources
+title: Learning Resources
 ---
 
 ### Quick References
 
 - [Scala Standard Library API](http://www.scala-lang.org/api/)
+- [Scala Documentation](http://docs.scala-lang.org/)
 
 ### Week 1
 
 - [Martin's talk at OSCON 2011: Working Hard to Keep it Simple](http://www.youtube.com/watch?v=3jg1AheF4n0) ([slides](http://www.slideshare.net/Odersky/oscon-keynote-working-hard-to-keep-it-simple))
 - Books:
   
-  - _Structure and Interpretation of Computer Programs_. Harold Abelson
-    and Gerald J. Sussman. 2nd edition. MIT Press 1996.
-	[Full text online](http://mitpress.mit.edu/sicp/).
+  - _**Structure and Interpretation of Computer Programs**_. _Harold Abelson and Gerald J. Sussman. 2nd edition. MIT Press 1996._ - \[[**Full text available online**](http://mitpress.mit.edu/sicp/)\].
+  - _**Programming in Scala**_. _Martin Odersky, Lex Spoon and Bill Venners. 2nd edition. Artima 2010._ - \[[**Full text of 1st edition available online**](http://www.artima.com/pins1ed/)\].
+  <br/>Artima has graciously provided a 25% discount on the 2nd edition of _Programming in Scala_ to all participants of this course. To receive the discount, simply visit [http://www.artima.com/shop/programming_in_scala_2ed](http://www.artima.com/shop/programming_in_scala_2ed) and during checkout, please use the coupon code: COURSERA-ODERSKY to have the discount applied.
   	
-  - _Programming in Scala_. Martin Odersky, Lex Spoon and Bill
-    Venners. 2nd edition. Artima 2010.
-	[Full text of 1st edition online](http://www.artima.com/pins1ed/).
-  	
-  - _Scala for the Impatient_.
-    [First part available for download](http://typesafe.com/resources/scala-for-the-impatient).
-	
-  - _Scala in Depth_. Joshua D. Suereth. Manning 2012.
-    
-  - _Programming Scala_. Dean Wampler and Alex Payne. O'reilly 2008. [Online edition](http://ofps.oreilly.com/titles/9780596155957/).
+  - _**Scala for the Impatient**_. _Cay Horstmann. Addison-Wesley 2012._ - \[[**First part available for download**](http://typesafe.com/resources/scala-for-the-impatient).\]
+  - _**Scala in Depth**_. _Joshua D. Suereth. Manning 2012._ - \[[**Available for purchase**](http://www.manning.com/suereth/)\].
+  - _**Programming Scala**_. _Dean Wampler and Alex Payne. O'Reilly 2008._ \[[**Online edition**](http://ofps.oreilly.com/titles/9780596155957/)\].
