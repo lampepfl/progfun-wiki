@@ -61,5 +61,5 @@ can use a `val` instead.
 
 ## Other styling issues?
 
-Please post to the forum using the `style` tag and we will augment
-this style guide with suggestions.
+Please post to the forum using the `style` or `styleCheck`tags and we
+will augment this style guide with suggestions.
