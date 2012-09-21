@@ -59,6 +59,24 @@ prefer:
 If you're just using a `var` to store a local immutable result, you
 can use a `val` instead.
 
+## Eliminate Redundant `If` Expressions
+
+Instead of:
+
+    if (cond) true else false
+
+prefer:
+
+    cond
+
+and instead of:
+
+    if (cond) false else true
+
+prefer:
+
+    !cond
+
 ## Other styling issues?
 
 Please post to the forum using the `style` or `styleCheck`tags and we
