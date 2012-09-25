@@ -22,3 +22,8 @@ title: Learning Resources
   - _**Scala for the Impatient**_. _Cay Horstmann. Addison-Wesley 2012._ - \[[**First part available for download**](http://typesafe.com/resources/scala-for-the-impatient).\]
   - _**Scala in Depth**_. _Joshua D. Suereth. Manning 2012._ - \[[**Available for purchase**](http://www.manning.com/suereth/)\].
   - _**Programming Scala**_. _Dean Wampler and Alex Payne. O'Reilly 2008._ \[[**Online edition**](http://ofps.oreilly.com/titles/9780596155957/)\].
+
+### Week 2
+
+- [Glossary of Scala and FP terms](http://docs.scala-lang.org/glossary/), for any issues with terminology.
+
