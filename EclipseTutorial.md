@@ -27,6 +27,6 @@ This website also contains a lot more useful information and handy tricks that m
 
 ## Running Tests inside Eclipse
 
-You can easily execute the test suites directly inside eclipse. Simply navigate ot source file of the test suite in `src/test/scala`, right-click on it and select "Run As" - "JUnit Test".
+You can easily execute the test suites directly inside eclipse. Simply navigate to source file of the test suite in `src/test/scala`, right-click on it and select "Run As" - "JUnit Test".
 
 The JUnit window will display the result of each individual test.
