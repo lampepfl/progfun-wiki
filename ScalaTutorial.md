@@ -53,7 +53,7 @@ In Scala, the `main` or entry point method is defined in an `object`. An object 
 
 ## Source Files, Classfiles and the JVM
 
-Scala source code is stored in text files with the extension `.scala`. Typically Scala programmers create one source file for each class, or one source file for a class hierarchy: In fact, Scala allows multiple classes and objects do be defined in the same source file.
+Scala source code is stored in text files with the extension `.scala`. Typically Scala programmers create one source file for each class, or one source file for a class hierarchy: In fact, Scala allows multiple classes and objects to be defined in the same source file.
 
 - The name of a Scala source file can be chosen freely, but it is recommended to use the name of a class which is defined in that file.
 - Package hierarchies should be reflected in directory structure: a source file defining `class C` in package `foo.bar` should be stored in a subdirecotory as `foo/bar/C.scala`. Scala does not really enforce this convention, but some tools such as the Scala IDE for eclipse might have problems otherwise.
