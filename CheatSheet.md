@@ -183,7 +183,7 @@ Functions must be contravariant in their argument types and covariant in their r
 
 Two functions exist to do a runtime type check:
 
-    def isInstanceOf[T]: Boolean // checkes whether the object type conforms to 'T'
+    def isInstanceOf[T]: Boolean // checks whether the object type conforms to 'T'
     def asInstanceOf[T]: T       // treats this object as an instance of type 'T'. Throws ClassCastException if it isn't
 
 Pattern matching can also be used:
@@ -211,7 +211,7 @@ Scala defines several collection classes:
 - `Iterable` (collections you can iterate on)
 - `Seq` (ordered sequences)
 - `Set`
-- `Map` (lookup datastructure)
+- `Map` (lookup data structure)
 
 ### Immutable Collections
 - `List` (linked list)
