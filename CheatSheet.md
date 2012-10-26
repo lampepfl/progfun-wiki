@@ -38,16 +38,16 @@ These are functions that take a function as a parameter or return functions.
     sum(x => x * x * x)                 // Same anonymous function with type inferred
 
     def cube(x: Int) => x * x * x  
-    sum(x => x * x * x)(1, 10) // sum(x=1 to 10) (x * x)  
-    sum(cube)(1, 10) // same as above      
+    sum(x => x * x * x)(1, 10) // sum of cubes from 1 to 10
+    sum(cube)(1, 10)           // same as above      
 
 ## Currying
 
 Converting a function with multiple arguments in a function with a
 single argument that returns another function.
 
-    def f(a: Int, b: Int): Int // uncurryfied version (type is (Int, Int) => Int)
-    def f(a: Int)(b: Int): Int // curryfied version (type is Int => Int => Int)
+    def f(a: Int, b: Int): Int // uncurried version (type is (Int, Int) => Int)
+    def f(a: Int)(b: Int): Int // curried version (type is Int => Int => Int)
     
 ## Classes
 
@@ -133,6 +133,7 @@ or
         class Square extends Shape with Planar
 
 - General object hierarchy:
+
     - `scala.Any` base type of all types. Has methods `hashCode` and `toString` that can be overloaded
     - `scala.AnyVal` base type of all primitive types. (`scala.Double`, `scala.Float`, etc.)
     - `scala.AnyRef` base type of all reference types. (alias of `java.lang.Object`, supertype of `java.lang.String`, `scala.List`, any user-defined class)
@@ -143,17 +144,17 @@ or
 
 Similar to C++ templates or Java generics. These can apply to classes, traits or functions.
 
-    class MyClass[T](arg1: T): T = { ... }  
+    class MyClass[T](arg1: T) { ... }  
     new MyClass[Int](1)  
     new MyClass(1)   // the type is being infered, i.e. determined based on the value arguments  
 
 It is possible to restrict the type being used, e.g.
 
-    def myFct[T <: TopLevel](arg: T): { ... } // T must derive from TopLevel or be TopLevel
-    def myFct[T >: Level1](arg: T): { ... }   // T must be a supertype of Level1
-    def myFct[T >: Level1 <: Top Level](arg: T): { ...}
+    def myFct[T <: TopLevel](arg: T): T = { ... } // T must derive from TopLevel or be TopLevel
+    def myFct[T >: Level1](arg: T): T = { ... }   // T must be a supertype of Level1
+    def myFct[T >: Level1 <: Top Level](arg: T): T = { ... }
 
-## Covariance
+## Variance
 
 Given `A <: B`
 
@@ -178,15 +179,12 @@ Functions must be contravariant in their argument types and covariant in their r
     class Array[+T] {
       def update(x: T)
     } // variance checks fails
+    
+Find out more about variance in
+[lecture 4.4](https://class.coursera.org/progfun-2012-001/lecture/81)
+and [lecture 4.5](https://class.coursera.org/progfun-2012-001/lecture/83)
 
-## Runtime Type Checks
-
-Two functions exist to do a runtime type check:
-
-    def isInstanceOf[T]: Boolean // checks whether the object type conforms to 'T'
-    def asInstanceOf[T]: T       // treats this object as an instance of type 'T'. Throws ClassCastException if it isn't
-
-Pattern matching can also be used:
+## Pattern matching
 
     unknownObject match {
       case MyClass(n) => ...
@@ -230,11 +228,9 @@ Scala defines several collection classes:
     val fruit = Set("apple", "banana", "pear")
     val nums = Vector(1, 2, 3)
     val nums = List(1, 2, 3, 4)
-    val fruit: List[String] = List("apples", "oranges", "pears")
-    val nums: List[Int] = List(1, 2, 3, 4)
     val empty = List()
     
-    // Alternative syntax for lists
+    // Alternative syntax for lists (parens optional, :: is right-associative)
     val fruit = "apples" :: ("oranges" :: ("pears" :: Nil))
     val empty = Nil
     fruit.head // "apples"
@@ -248,7 +244,7 @@ Scala defines several collection classes:
     s map (_ + 2) // adds 2 to each element of the set
     fruit filter (_.startsWith == "app")
 
-    val s = "Hello world"
+    val s = "Hello World"
     s filter (c => c.isUpper) // => "HW"
 
     // Operations on sequences
@@ -289,12 +285,8 @@ Scala defines several collection classes:
     xs groupBy f   // returns a map which points to a list of elements
     xs distinct    // sequence of distinct entries (no duplicates)
 
-    x :: xs  // does NOT work for vectors
-    x +: xs  // creates a new vector with leading element x
-    xs :+ x  // creates a new vector with trailing element x
-
-    // list all combinations of numbers x and y where x is drawn from 1 to M and y is drawn from 1 to N
-    (1 to M) flatMap (x => (1 to N) map (y => (x, y)))
+    x +: xs  // creates a new collection with leading element x
+    xs :+ x  // creates a new collection with trailing element x
 
     // Operations on maps
     val myMap = Map("I" -> 1, "V" -> 5, "X" -> 10)  
@@ -325,9 +317,7 @@ the trait `scala.math.Ordered[T]`.
 
 ## For-Comprehensions
 
-A for-comprehension is syntactic sugar for `map`, `flatMap`, `filter` and `foreach` operations on collections.
-
-### Side-Effect Free Form
+A for-comprehension is syntactic sugar for `map`, `flatMap` and `filter` operations on collections.
 
 The general form is `for (s) yield e`
 
@@ -338,7 +328,33 @@ The general form is `for (s) yield e`
 - You can use `{ s }` instead of `( s )` if you want to use multiple lines without requiring semicolons
 - `e` is an element of the resulting collection
 
-<!-- start code block -->
+### Example 1
+
+    // list all combinations of numbers x and y where x is drawn from
+    // 1 to M and y is drawn from 1 to N
+    for (x <- 1 to M; y <- 1 to N)
+      yield (x,y)
+
+is equivalent to
+        
+    (1 to M) flatMap (x => (1 to N) map (y => (x, y)))
+
+### Translation Rules
+
+A for-expression looks like a traditional for loop but works differently internally
+
+`for (x <- e1) yield e2` is translated to `e1.map(x => e2)`
+
+`for (x <- e1 if f) yield e2` is translated to `for (x <- e1.filter(x => f)) yield e2`
+
+`for (x <- e1; y <- e2) yield e3` is translated to `e1.flatMap(x => for (y <- e2) yield e3)`
+
+This means you can use a for-comprehension for your own type, as long
+as you define `map`, `flatMap` and `filter`.
+
+For more, see [lecture 6.5](https://class.coursera.org/progfun-2012-001/lecture/111).
+
+### Example 2
 
     for {  
       i <- 1 until n  
@@ -355,24 +371,4 @@ is equivalent to
 
     (1 until n).flatMap(i => (1 until i).filter(j => isPrime(i + j)).map(j => (i, j)))
 
-A for-expression looks like a traditional for loop but works differently internally
 
-`for (x <- e1) yield e2` is translated to `e1.map(x => e2)`
-
-`for (x <- e1 if f) yield e2` is translated to `for (x <- e1.filter(x => f)) yield e2`
-
-`for (x <- e1; y <- e2) yield e3` is translated to `e1.flatMap(x => for (y <- e2) yield e3)`
-
-This means you can use a for-comprehension for your own type, as long as you define `map`, `flatMap` and `filter`.
-
-### Form With Side-Effects
-
-For-comprehensions have also a form with side-effects:
-
-    for (i <- 1 until n) {
-        println(i)
-    }
-    
-this translates into
-
-    (1 until n).foreach(i => println(i))
