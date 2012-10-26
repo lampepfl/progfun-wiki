@@ -4,13 +4,17 @@ title: Cheat Sheet
 ---
 
 This cheat sheet originated from the forum, credits to Laurent Poulain.
+We copied it and changed or added a few things.
+There are certainly a lot of things that can be improved! If you would like to contribute, fork the following repository on github and send pull requests!
+
+Repository: [https://github.com/lrytz/progfun-wiki](https://github.com/lrytz/progfun-wiki)
+
+(To preview your changes locally, you need [jekyll](https://github.com/mojombo/jekyll/wiki/install). Navigate to your checkout and invoke `jekyll --auto --server`, then open the page [http://localhost:4000/CheatSheet.html](http://localhost:4000/CheatSheet.html)).
 
 ## Evaluation Rules
 
 - Call by value: evaluates the function arguments before calling the function
 - Call by name: evaluates the function first, and then evaluates the arguments if need be
-
-<!-- start code block -->
 
     def example = 2      // evaluated when called
     val example = 2      // evaluated immediately
