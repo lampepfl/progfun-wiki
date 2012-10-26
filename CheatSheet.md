@@ -5,11 +5,13 @@ title: Cheat Sheet
 
 This cheat sheet originated from the forum, credits to Laurent Poulain.
 We copied it and changed or added a few things.
-There are certainly a lot of things that can be improved! If you would like to contribute, fork the following repository on github and send pull requests!
+There are certainly a lot of things that can be improved! If you would like to contribute, you have two options:
 
-Repository: [https://github.com/lrytz/progfun-wiki](https://github.com/lrytz/progfun-wiki)
+- Click the "Edit" button on this file on GitHub:  
+  [https://github.com/lrytz/progfun-wiki/blob/gh-pages/CheatSheet.md](https://github.com/lrytz/progfun-wiki/blob/gh-pages/CheatSheet.md)  
+  You can submit a pull request directly from there without checking out the git repository to your local machine.
 
-(To preview your changes locally, you need [jekyll](https://github.com/mojombo/jekyll/wiki/install). Navigate to your checkout and invoke `jekyll --auto --server`, then open the page [http://localhost:4000/CheatSheet.html](http://localhost:4000/CheatSheet.html)).
+- Fork the repository [https://github.com/lrytz/progfun-wiki](https://github.com/lrytz/progfun-wiki) and check it out locally. To preview your changes, you need [jekyll](https://github.com/mojombo/jekyll/wiki/install). Navigate to your checkout and invoke `jekyll --auto --server`, then open the page [http://localhost:4000/CheatSheet.html](http://localhost:4000/CheatSheet.html).
 
 ## Evaluation Rules
 
