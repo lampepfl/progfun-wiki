@@ -184,22 +184,42 @@ Find out more about variance in
 [lecture 4.4](https://class.coursera.org/progfun-2012-001/lecture/81)
 and [lecture 4.5](https://class.coursera.org/progfun-2012-001/lecture/83)
 
-## Pattern matching
+## Pattern Matching
+
+Pattern matching is used for decomposing data structures:
 
     unknownObject match {
       case MyClass(n) => ...
       case MyClass2(a, b) => ...
     }
 
-    List[T] match {
+Here are a few example patterns
+
+    (someList: List[T]) match {
       case Nil => ...          // empty list
       case x :: Nil => ...     // list with only one element
       case List(x) => ...      // same as above
-      case x :: xs => ...      // x is the head and xs the tail
+      case x :: xs => ...      // a list with at least one element. x is bound to the head,
+                               // xs to the tail. xs could be Nil or some other list.
       case 1 :: 2 :: cs => ... // lists that starts with 1 and then 2
+      case (x, y) :: ps => ... // a list where the head element is a pair
     }
 
-You may use `{ case p1 => e1 ... }` instead of `x => x match { case p1 => e1 ... }` (see Scala Language Specification 2.9 section 8.5)
+The last example shows that every pattern consists of sub-patterns: it only matches lists with at least one element, wehre that element is a pair. `x` and `y` are again patterns that could match only specific types.
+
+Pattern matches are also used quite often in anonymous functions:
+
+    val pairs: List[(Char, Int)] = ('a', 2) :: ('b', 3) :: Nil
+    val chars: List[Char] = pairs.map(p => p match {
+      case (ch, num) => ch
+    })
+
+Instead of `p => p match { case ... }`, you can simply write `{case ...}`, so the above example becomes more consice:
+
+    val chars: List[Char] = pairs map {
+      case (ch, num) => ch
+    }
+
 
 ## Collections
 
@@ -212,52 +232,56 @@ Scala defines several collection classes:
 - `Map` (lookup data structure)
 
 ### Immutable Collections
-- `List` (linked list)
-- `Vector` (array-like type, implemented as tree of blocks)
+- `List` (linked list, provides fast sequential access)
+- `Vector` (array-like type, implemented as tree of blocks, provides fast random access)
 - `Range` (ordered sequence of integers with equal spacing)
-- `String` (Java type, implicitly converted to a `Seq`)
+- `String` (Java type, implicitly converted to a character sequence, so you can treat every string like a `Seq[Char]`)
 - `Map`
 - `Set`
 
 ### Mutable Collections
-- `Array` (wrapper around Java arrays)
+- `Array` (Scala arrays are native JVM arrays at runtime, therefore they are very peroformant)
+- Scala also has mutable maps and sets; these should only be used if there are performance issues with immutable types
 
 ### Examples
 
-    val fruit = List("apples", "oranges", "pears")
-    val fruit = Set("apple", "banana", "pear")
-    val nums = Vector(1, 2, 3)
-    val nums = List(1, 2, 3, 4)
+    val fruitList = List("apples", "oranges", "pears")
+    // Alternative syntax for lists
+    val fruit = "apples" :: ("oranges" :: ("pears" :: Nil)) // parens optional, :: is right-associative
+    fruit.head   // "apples"
+    fruit.tail   // List("oranges", "pears")
     val empty = List()
-    
-    // Alternative syntax for lists (parens optional, :: is right-associative)
-    val fruit = "apples" :: ("oranges" :: ("pears" :: Nil))
     val empty = Nil
-    fruit.head // "apples"
-    fruit.tail // List("oranges", "pears")
+
+    val nums = Vector("louis", "frank", "hiromi")
+    nums(1)                     // element at index 1, returns "frank", complexity O(log(n))
+    nums.updated(2, "helena")   // new vector with a different string at index 2, complexity O(log(n))
+    
+    val fruitSet = Set("apple", "banana", "pear", "banana")
+    fruitSet.size    // returns 3: there are no duplicates, only one banana
 
     val r: Range = 1 until 5 // 1, 2, 3, 4
     val s: Range = 1 to 5    // 1, 2, 3, 4, 5
     1 to 10 by 3  // 1, 4, 7, 10
     6 to 1 by -2  // 6, 4, 2
+
     val s = (1 to 6).toSet
     s map (_ + 2) // adds 2 to each element of the set
-    fruit filter (_.startsWith == "app")
 
     val s = "Hello World"
-    s filter (c => c.isUpper) // => "HW"
+    s filter (c => c.isUpper) // returns "HW"; strings can be treated as Seq[Char]
 
     // Operations on sequences
     val xs = List(...)
-    xs.length   // number of elements
-    xs.last     // last element (exception if xs is empty)
-    xs.init     // all elements of xs but the last (exception if xs is empty)
+    xs.length   // number of elements, complexity O(n)
+    xs.last     // last element (exception if xs is empty), complexity O(n)
+    xs.init     // all elements of xs but the last (exception if xs is empty), complexity O(n)
     xs take n   // first n elements of xs
     xs drop n   // the rest of the collection after taking n elements
-    xs(n)       // the nth element of xs
-    xs ++ ys    // concatenation
-    xs.reverse  // reverse the order
-    xs updated(n, x)  // same list than xs, except at index n where it contains x
+    xs(n)       // the nth element of xs, complexity O(n)
+    xs ++ ys    // concatenation, complexity O(n)
+    xs.reverse  // reverse the order, complexity O(n)
+    xs updated(n, x)  // same list than xs, except at index n where it contains x, complexity O(n)
     xs indexOf x      // the index of the first element equal to x (-1 otherwise)
     xs contains x     // same as xs indexOf x >= 0
     xs filter p       // returns a list of the elements that satisfy the predicate p
@@ -283,20 +307,21 @@ Scala defines several collection classes:
     xs.min         // minimum of collection
     xs.flatten     // flattens a collection of collection into a single-level collection
     xs groupBy f   // returns a map which points to a list of elements
-    xs distinct    // sequence of distinct entries (no duplicates)
+    xs distinct    // sequence of distinct entries (removes duplicates)
 
     x +: xs  // creates a new collection with leading element x
     xs :+ x  // creates a new collection with trailing element x
 
     // Operations on maps
-    val myMap = Map("I" -> 1, "V" -> 5, "X" -> 10)  
+    val myMap = Map("I" -> 1, "V" -> 5, "X" -> 10)  // create a map
     myMap("I")      // => 1  
     myMap("A")      // => java.util.NoSurchElementException  
-    myMap get "A"   // => None  
-    myMap get "I"   // => Some(1)  
-    "I" -> 1        // A single mapping that can be added to a Map (actually a tuple)
+    myMap get "A"   // => None 
+    myMap get "I"   // => Some(1)
+    myMap.updated("V", 15)  // returns a new map where "V" maps to 15 (entry is updated)
+                            // if the key ("V" here) does not exist, a new entry is added
     
-## Pairs and Tuples
+## Pairs (similar for larger Tuples)
 
     val pair = ("answer", 42)   // type: (String, Int)
     val (label, value) = pair   // label = "answer", value = 42  
