@@ -248,7 +248,7 @@ Scala defines several collection classes:
 - `Set`
 
 ### Mutable Collections
-- `Array` (Scala arrays are native JVM arrays at runtime, therefore they are very peroformant)
+- `Array` (Scala arrays are native JVM arrays at runtime, therefore they are very performant)
 - Scala also has mutable maps and sets; these should only be used if there are performance issues with immutable types
 
 ### Examples
