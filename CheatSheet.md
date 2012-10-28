@@ -51,7 +51,7 @@ These are functions that take a function as a parameter or return functions.
 
 ## Currying
 
-Converting a function with multiple arguments in a function with a
+Converting a function with multiple arguments into a function with a
 single argument that returns another function.
 
     def f(a: Int, b: Int): Int // uncurried version (type is (Int, Int) => Int)
