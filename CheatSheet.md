@@ -51,7 +51,7 @@ These are functions that take a function as a parameter or return functions.
 
 ## Currying
 
-Converting a function with multiple arguments in a function with a
+Converting a function with multiple arguments into a function with a
 single argument that returns another function.
 
     def f(a: Int, b: Int): Int // uncurried version (type is (Int, Int) => Int)
@@ -212,7 +212,7 @@ Here are a few example patterns
       case (x, y) :: ps => ... // a list where the head element is a pair
     }
 
-The last example shows that every pattern consists of sub-patterns: it only matches lists with at least one element, wehre that element is a pair. `x` and `y` are again patterns that could match only specific types.
+The last example shows that every pattern consists of sub-patterns: it only matches lists with at least one element, where that element is a pair. `x` and `y` are again patterns that could match only specific types.
 
 Pattern matches are also used quite often in anonymous functions:
 
@@ -221,7 +221,7 @@ Pattern matches are also used quite often in anonymous functions:
       case (ch, num) => ch
     })
 
-Instead of `p => p match { case ... }`, you can simply write `{case ...}`, so the above example becomes more consice:
+Instead of `p => p match { case ... }`, you can simply write `{case ...}`, so the above example becomes more concise:
 
     val chars: List[Char] = pairs map {
       case (ch, num) => ch
