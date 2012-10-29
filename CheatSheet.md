@@ -293,7 +293,7 @@ Scala defines several collection classes:
     xs contains x     // same as xs indexOf x >= 0
     xs filter p       // returns a list of the elements that satisfy the predicate p
     xs filterNot p    // filter with negated p 
-    xs partition p    // same as (cs filter p, xs filterNot p)
+    xs partition p    // same as (xs filter p, xs filterNot p)
     xs takeWhile p    // the longest prefix consisting of elements that satisfy p
     xs dropWhile p    // the remainder of the list after any leading element satisfying p have been removed
     xs span p         // same as (xs takeWhile p, xs dropWhile p)
