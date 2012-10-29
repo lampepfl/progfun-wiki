@@ -153,7 +153,7 @@ Similar to C++ templates or Java generics. These can apply to classes, traits or
 
     class MyClass[T](arg1: T) { ... }  
     new MyClass[Int](1)  
-    new MyClass(1)   // the type is being infered, i.e. determined based on the value arguments  
+    new MyClass(1)   // the type is being inferred, i.e. determined based on the value arguments  
 
 It is possible to restrict the type being used, e.g.
 
