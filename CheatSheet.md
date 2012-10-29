@@ -233,8 +233,8 @@ is either a `Some(T)` or a `None`:
     getMapValue("a")  // "Value found: 42"
     getMapValue("c")  // "No value found"
     
-This is a less idiomatic use of the `Option` type. The function
-`getMapValue` could be better written as:
+However, this is a less idiomatic use of the `Option` type. The
+function `getMapValue` could be better written as:
 
     def getMapValue(s: String): String =
       myMap.get(s).map("Value found: " + _).getOrElse("No value found")
