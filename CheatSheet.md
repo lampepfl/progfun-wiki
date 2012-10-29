@@ -243,8 +243,8 @@ Scala defines several collection classes:
 - `Vector` (array-like type, implemented as tree of blocks, provides fast random access)
 - `Range` (ordered sequence of integers with equal spacing)
 - `String` (Java type, implicitly converted to a character sequence, so you can treat every string like a `Seq[Char]`)
-- `Map`
-- `Set`
+- `Map` (collection that maps keys to values)
+- `Set` (collection without duplicate elements)
 
 ### Mutable Collections
 - `Array` (Scala arrays are native JVM arrays at runtime, therefore they are very performant)
