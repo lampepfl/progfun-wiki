@@ -299,7 +299,7 @@ Scala defines several collection classes:
     xs span p         // same as (xs takeWhile p, xs dropWhile p)
     
     List(x1, ..., xn) reduceLeft op    // (...(x1 op x2) op x3) op ...) op xn
-    List(x1, ..., xn).foldLeft(z)(op)  // (...( z op x2) op x3) op ...) op xn
+    List(x1, ..., xn).foldLeft(z)(op)  // (...( z op x1) op x2) op ...) op xn
     List(x1, ..., xn) reduceRight op   // x1 op (... (x{n-1} op xn) ...)
     List(x1, ..., xn).foldRight(z)(op) // x1 op (... (    xn op  z) ...)
     
