@@ -212,6 +212,18 @@ Here are a few example patterns
       case (x, y) :: ps => ... // a list where the head element is a pair
     }
 
+Pattern matching can also be used to parse Option values. Some function (like Map.get) return a type Option[T] which could be either Some(T) or None:
+
+    val myMap = Map("a" -> 42, "b" -> 43)
+    def getMapValue(s: String): String = {
+      myMap get s match {
+        case Some(nb) => "Value found: " + nb
+        case None => "No value found"
+      }
+    }
+    getMapValue("a")  // "Value found: 42"
+    getMapValue("c")  // "No value found"
+
 The last example shows that every pattern consists of sub-patterns: it only matches lists with at least one element, where that element is a pair. `x` and `y` are again patterns that could match only specific types.
 
 Pattern matches are also used quite often in anonymous functions:
