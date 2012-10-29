@@ -100,7 +100,7 @@ Note that assignment operators have lowest precedence. (Read Scala Language Spec
 
 ## Class hierarchies
 
-    abtract class TopLevel {     // abstract class  
+    abstract class TopLevel {     // abstract class  
       def method1(x: Int): Int   // abstract method  
       def method2(x: Int): Int = { ... }  
     }
