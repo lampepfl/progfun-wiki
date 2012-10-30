@@ -269,6 +269,7 @@ Scala defines several collection classes:
 
 ### Immutable Collections
 - `List` (linked list, provides fast sequential access)
+- `Stream` (same as List, except that the tail is evaluated only on demand)
 - `Vector` (array-like type, implemented as tree of blocks, provides fast random access)
 - `Range` (ordered sequence of integers with equal spacing)
 - `String` (Java type, implicitly converted to a character sequence, so you can treat every string like a `Seq[Char]`)
@@ -356,7 +357,16 @@ Scala defines several collection classes:
     myMap get "I"   // => Some(1)
     myMap.updated("V", 15)  // returns a new map where "V" maps to 15 (entry is updated)
                             // if the key ("V" here) does not exist, a new entry is added
-    
+
+    // Operations on Streams
+    val xs = Stream(1, 2, 3)
+    val xs = Stream.cons(1, Stream.cons(2, Stream.empty)) // same as above
+    (1 to 1000).toStream // => Stream(1, ?)
+    x #:: xs // Same as Stream.cons(x, xs)
+             // In the Stream's cons operator, the second parameter (the tail)
+             // is defined as a "call by name" parameter.
+             // Note that x::xs always produces a List
+
 ## Pairs (similar for larger Tuples)
 
     val pair = ("answer", 42)   // type: (String, Int)
