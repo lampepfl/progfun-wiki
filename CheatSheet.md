@@ -221,7 +221,7 @@ types.
 
 Pattern matching can also be used for `Option` values. Some
 functions (like `Map.get`) return a value of type `Option[T]` which
-is either a `Some(T)` or a `None`:
+is either a value of type `Some[T]` or the value `None`:
 
     val myMap = Map("a" -> 42, "b" -> 43)
     def getMapValue(s: String): String = {
@@ -233,8 +233,10 @@ is either a `Some(T)` or a `None`:
     getMapValue("a")  // "Value found: 42"
     getMapValue("c")  // "No value found"
     
-However, this is a less idiomatic use of the `Option` type. The
-function `getMapValue` could be better written as:
+Most of the times when you write a pattern match on an option value,
+the same expression can be written more concisely using combinator
+methods of the `Option` class. For example, the function `getMapValue`
+can be written as follows: 
 
     def getMapValue(s: String): String =
       myMap.get(s).map("Value found: " + _).getOrElse("No value found")
