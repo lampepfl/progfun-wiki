@@ -3,31 +3,31 @@ layout: page
 title: Scala Style Guide
 ---
 
-On this page we publish feedback notes which are specific to individual asignments. For feedback which applies to coding style in general, visit the [Scala Style Guide](?page=ScalaStyleGuide) wiki page.
+On this page we will periodically publish feedback specific to individual assignments. For feedback which applies to coding style in general, visit the [Scala Style Guide](?page=ScalaStyleGuide) wiki page.
 
 
 ### Week 4: Types and Pattern Matching (Huffman Coding)
 
-The following table indicates how often each of the issues occured during this assignment (the [Scala Style Guide](?page=ScalaStyleGuide) describes the first 12 issues).
+The following table indicates how often each of the issues occurred during this assignment (the [Scala Style Guide](?page=ScalaStyleGuide) describes the first 12 issues).
 
-    #issue    lukas
-    #1         2/23
-    #2         3/23
-    #3        12/23
-    #4         9/23
-    #5         7/23
-    #6         0/23
-    #7         0/23
-    #8         7/23
-    #9         1/23
-    #10        0/23
-    #11        2/23
-    #12        1/23
+    #issue    lukas   heather
+    #1         2/23   1/40
+    #2         3/23   7/40
+    #3        12/23   21/40
+    #4         9/23   /40
+    #5         7/23   9/40
+    #6         0/23   /40
+    #7         0/23   0/40
+    #8         7/23   7/40
+    #9         1/23   3/40
+    #10        0/23   0/40
+    #11        2/23   0/40
+    #12        1/23   /40
 
-    #4.1      11/23
-    #4.2      23/23
-    #4.3      10/23
-    #4.4       5/23
+    #4.1      11/23   /40
+    #4.2      23/23   /40
+    #4.3      10/23   24/40
+    #4.4       5/23   /40
 
 
 <table>
@@ -71,7 +71,7 @@ Some submissions make extensive use of `isEmpty`, `head` and `tail` instead of u
       else count(ch, counter, list.tail)
     }
 
-is more easily written as follows:
+is more clearly written as follows:
 
     def count(ch: Char, counter: Int, list: List[Char]): Int = list match {
       case Nil => counter
