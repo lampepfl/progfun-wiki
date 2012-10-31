@@ -13,6 +13,11 @@ There are certainly a lot of things that can be improved! If you would like to c
 
 - Fork the repository [https://github.com/lrytz/progfun-wiki](https://github.com/lrytz/progfun-wiki) and check it out locally. To preview your changes, you need [jekyll](https://github.com/mojombo/jekyll/wiki/install). Navigate to your checkout and invoke `jekyll --auto --server`, then open the page [http://localhost:4000/CheatSheet.html](http://localhost:4000/CheatSheet.html).
 
+## Own Scala's documentation
+
+- Official Scala site is [http://www.scala-lang.org](http://www.scala-lang.org).
+- Scala's documntation (stable api): [http://www.scala-lang.org/api](http://www.scala-lang.org/api)
+
 ## Evaluation Rules
 
 - Call by value: evaluates the function arguments before calling the function
