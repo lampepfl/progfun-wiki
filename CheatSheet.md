@@ -51,7 +51,7 @@ These are functions that take a function as a parameter or return functions.
 
 ## Currying
 
-Converting a function with multiple arguments in a function with a
+Converting a function with multiple arguments into a function with a
 single argument that returns another function.
 
     def f(a: Int, b: Int): Int // uncurried version (type is (Int, Int) => Int)
@@ -100,7 +100,7 @@ Note that assignment operators have lowest precedence. (Read Scala Language Spec
 
 ## Class hierarchies
 
-    abtract class TopLevel {     // abstract class  
+    abstract class TopLevel {     // abstract class  
       def method1(x: Int): Int   // abstract method  
       def method2(x: Int): Int = { ... }  
     }
@@ -145,8 +145,7 @@ or
   - `scala.Any` base type of all types. Has methods `hashCode` and `toString` that can be overloaded
   - `scala.AnyVal` base type of all primitive types. (`scala.Double`, `scala.Float`, etc.)
   - `scala.AnyRef` base type of all reference types. (alias of `java.lang.Object`, supertype of `java.lang.String`, `scala.List`, any user-defined class)
-  - `scala.Null` is a subtype of any `scala.AnyRef` (`null` is the only instance of type `Null`),
-       and `scala.Nothing` is a subtype of any other type without any instance.
+  - `scala.Null` is a subtype of any `scala.AnyRef` (`null` is the only instance of type `Null`), and `scala.Nothing` is a subtype of any other type without any instance.
 
 ## Type Parameters
 
@@ -154,7 +153,7 @@ Similar to C++ templates or Java generics. These can apply to classes, traits or
 
     class MyClass[T](arg1: T) { ... }  
     new MyClass[Int](1)  
-    new MyClass(1)   // the type is being infered, i.e. determined based on the value arguments  
+    new MyClass(1)   // the type is being inferred, i.e. determined based on the value arguments  
 
 It is possible to restrict the type being used, e.g.
 
@@ -212,8 +211,37 @@ Here are a few example patterns
       case 1 :: 2 :: cs => ... // lists that starts with 1 and then 2
       case (x, y) :: ps => ... // a list where the head element is a pair
     }
+    
+The last example shows that every pattern consists of sub-patterns: it
+only matches lists with at least one element, where that element is a
+pair. `x` and `y` are again patterns that could match only specific
+types.
 
-The last example shows that every pattern consists of sub-patterns: it only matches lists with at least one element, wehre that element is a pair. `x` and `y` are again patterns that could match only specific types.
+### Options
+
+Pattern matching can also be used for `Option` values. Some
+functions (like `Map.get`) return a value of type `Option[T]` which
+is either a value of type `Some[T]` or the value `None`:
+
+    val myMap = Map("a" -> 42, "b" -> 43)
+    def getMapValue(s: String): String = {
+      myMap get s match {
+        case Some(nb) => "Value found: " + nb
+        case None => "No value found"
+      }
+    }
+    getMapValue("a")  // "Value found: 42"
+    getMapValue("c")  // "No value found"
+    
+Most of the times when you write a pattern match on an option value,
+the same expression can be written more concisely using combinator
+methods of the `Option` class. For example, the function `getMapValue`
+can be written as follows: 
+
+    def getMapValue(s: String): String =
+      myMap.get(s).map("Value found: " + _).getOrElse("No value found")
+
+### Pattern Matching in Anonymous Functions
 
 Pattern matches are also used quite often in anonymous functions:
 
@@ -222,7 +250,7 @@ Pattern matches are also used quite often in anonymous functions:
       case (ch, num) => ch
     })
 
-Instead of `p => p match { case ... }`, you can simply write `{case ...}`, so the above example becomes more consice:
+Instead of `p => p match { case ... }`, you can simply write `{case ...}`, so the above example becomes more concise:
 
     val chars: List[Char] = pairs map {
       case (ch, num) => ch
@@ -241,11 +269,12 @@ Scala defines several collection classes:
 
 ### Immutable Collections
 - `List` (linked list, provides fast sequential access)
+- `Stream` (same as List, except that the tail is evaluated only on demand)
 - `Vector` (array-like type, implemented as tree of blocks, provides fast random access)
 - `Range` (ordered sequence of integers with equal spacing)
 - `String` (Java type, implicitly converted to a character sequence, so you can treat every string like a `Seq[Char]`)
-- `Map`
-- `Set`
+- `Map` (collection that maps keys to values)
+- `Set` (collection without duplicate elements)
 
 ### Mutable Collections
 - `Array` (Scala arrays are native JVM arrays at runtime, therefore they are very performant)
@@ -294,13 +323,13 @@ Scala defines several collection classes:
     xs contains x     // same as xs indexOf x >= 0
     xs filter p       // returns a list of the elements that satisfy the predicate p
     xs filterNot p    // filter with negated p 
-    xs partition p    // same as (cs filter p, xs filterNot p)
+    xs partition p    // same as (xs filter p, xs filterNot p)
     xs takeWhile p    // the longest prefix consisting of elements that satisfy p
     xs dropWhile p    // the remainder of the list after any leading element satisfying p have been removed
     xs span p         // same as (xs takeWhile p, xs dropWhile p)
     
     List(x1, ..., xn) reduceLeft op    // (...(x1 op x2) op x3) op ...) op xn
-    List(x1, ..., xn).foldLeft(z)(op)  // (...( z op x2) op x3) op ...) op xn
+    List(x1, ..., xn).foldLeft(z)(op)  // (...( z op x1) op x2) op ...) op xn
     List(x1, ..., xn) reduceRight op   // x1 op (... (x{n-1} op xn) ...)
     List(x1, ..., xn).foldRight(z)(op) // x1 op (... (    xn op  z) ...)
     
@@ -323,12 +352,21 @@ Scala defines several collection classes:
     // Operations on maps
     val myMap = Map("I" -> 1, "V" -> 5, "X" -> 10)  // create a map
     myMap("I")      // => 1  
-    myMap("A")      // => java.util.NoSurchElementException  
+    myMap("A")      // => java.util.NoSuchElementException  
     myMap get "A"   // => None 
     myMap get "I"   // => Some(1)
     myMap.updated("V", 15)  // returns a new map where "V" maps to 15 (entry is updated)
                             // if the key ("V" here) does not exist, a new entry is added
-    
+
+    // Operations on Streams
+    val xs = Stream(1, 2, 3)
+    val xs = Stream.cons(1, Stream.cons(2, Stream.empty)) // same as above
+    (1 to 1000).toStream // => Stream(1, ?)
+    x #:: xs // Same as Stream.cons(x, xs)
+             // In the Stream's cons operator, the second parameter (the tail)
+             // is defined as a "call by name" parameter.
+             // Note that x::xs always produces a List
+
 ## Pairs (similar for larger Tuples)
 
     val pair = ("answer", 42)   // type: (String, Int)
