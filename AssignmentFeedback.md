@@ -5,49 +5,85 @@ title: Scala Style Guide
 
 On this page we will periodically publish feedback specific to individual assignments. For feedback which applies to coding style in general, visit the [Scala Style Guide](?page=ScalaStyleGuide) wiki page.
 
+<!--
+
+to unpack multiple submissions into a subfolder each, you can place all the "output" files in
+a folder and use these commands
+
+  i=0;for f in *; do ((i += 1)) && mkdir s$i && unzip "$f" -d s$i; done
+
+open all files in sublime
+  
+  find . -name Huffman.scala | xargs sb
+
+
+some regular expressions to detect common issues. example usage (should also work in sublime,
+open all files and use cmd-shift-f)
+
+  find . -name Huffman.scala | xargs grep ";"
+  find . -name Huffman.scala | xargs grep -l ";" | wc -l
+
+
+#1 "InstanceOf"
+#3 ".{123,}"  |  (".\{123,\}" for grep)
+#5 "temp", "tmp", "iter", "loop", "test", "help"
+#8 ";"
+#9 "print"
+#10 "return"
+#11 "var"
+
+#4.2: ":::"
+#4.3: "tail.head"
+#4.5: "case.*[^:]:[^:].*=>"
+
+-->
+
 
 ### Week 4: Types and Pattern Matching (Huffman Coding)
 
 The following table indicates how often each of the issues occurred during this assignment (the [Scala Style Guide](?page=ScalaStyleGuide) describes the first 12 issues).
 
-    #issue    lukas   heather
-    #1         2/23   1/40
-    #2         3/23   7/40
+<!--
+    #issue    lukas  heather
+    #1         2/23    1/40
+    #2         3/23    7/40
     #3        12/23   21/40
     #4         9/23   17/40
-    #5         7/23   9/40
-    #6         0/23   1/40
-    #7         0/23   0/40
-    #8         7/23   7/40
-    #9         1/23   3/40
-    #10        0/23   0/40
-    #11        2/23   0/40
-    #12        1/23   2/40
+    #5         7/23    9/40
+    #6         0/23    1/40
+    #7         0/23    0/40
+    #8         7/23    7/40
+    #9         1/23    3/40
+    #10        0/23    0/40
+    #11        2/23    0/40
+    #12        1/23    2/40
 
     #4.1      11/23   15/40
     #4.2      23/23   40/40
     #4.3      10/23   24/40
-    #4.4       5/23   6/40
-
+    #4.4       5/23    6/40
+    #4.5       5/23    6/40
+-->
 
 <table>
-  <tr><td>#1 (casts)</td>         <td>5%</td></tr>
-  <tr><td>#2 (indent)</td>        <td>16%</td></tr>
-  <tr><td>#3 (line length)</td>   <td>38%</td></tr>
-  <tr><td>#4 (use locals)</td>    <td>17%</td></tr>
-  <tr><td>#5 (good names)</td>    <td>25%</td></tr>
+  <tr><td>#1 (casts)</td>         <td>6%</td></tr>
+  <tr><td>#2 (indent)</td>        <td>15%</td></tr>
+  <tr><td>#3 (line length)</td>   <td>52%</td></tr>
+  <tr><td>#4 (use locals)</td>    <td>40%</td></tr>
+  <tr><td>#5 (good names)</td>    <td>26%</td></tr>
   <tr><td>#6 (common subexpr)</td><td>2%</td></tr>
   <tr><td>#7 (copy-paste)</td>    <td>0%</td></tr>
-  <tr><td>#8 (semicolons)</td>    <td>22%</td></tr>
+  <tr><td>#8 (semicolons)</td>    <td>23%</td></tr>
   <tr><td>#9 (print stmts)</td>   <td>6%</td></tr>
   <tr><td>#10 (return)</td>       <td>0%</td></tr>
-  <tr><td>#11 (vars)</td>         <td>3%</td></tr>
+  <tr><td>#11 (vars)</td>         <td>4%</td></tr>
   <tr><td>#12 (redundant if)</td> <td>5%</td></tr>
   <tr><td></td><td></td></tr>
-  <tr><td>#4.1 (weight / chars)</td><td>41%</td></tr>
+  <tr><td>#4.1 (weight / chars)</td><td>43%</td></tr>
   <tr><td>#4.2 (::: vs ++)</td>     <td>100%</td></tr>
-  <tr><td>#4.3 (list matching)</td> <td>54%</td></tr>
+  <tr><td>#4.3 (list matching)</td> <td>51%</td></tr>
   <tr><td>#4.4 (sort too often)</td><td>18%</td></tr>
+  <tr><td>#4.5 (type patterns)</td> <td>18%</td></tr>
 </table>
 
 
@@ -91,7 +127,7 @@ Note that the `counter` parameter is not required, the method can be written as 
         increment + count(ch, xs)
     }
 
-### 4.4 Calling "sort" in a recursive Function
+### #4.4 Calling "sort" in a recursive Function
 
 To sort the the list of frequencies, some solutions of `makeOrderedLeafList` call `sort` in every iteration - this is unnecessary, calling it once on the entire list would be enough. To avoid the problem, a helper method might be required. Example:
 
@@ -100,6 +136,35 @@ To sort the the list of frequencies, some solutions of `makeOrderedLeafList` cal
         [...] makeOrderedLeafList(someTail) [...]
       }
 
+
+### #4.5 Avoid Type Patterns
+
+There is one form of pattern matching - type patterns - which should be avoided in general. A type pattern has the following form:
+
+    expr match {
+      case x: T => ...
+    }
+
+A type pattern is equivalent to a type test and a cast:
+
+    if (expr.isInstanceOf[T]) {
+      val x = expr.asInstanceOf[T]
+      ...
+    }
+
+In all cases where we found type patterns in the submissions, they should have been replaced by ordinary pattern matches. In an ordinary pattern, you can at the same time match on the type of a value and define value bindings for its fields. For example, the following implementation
+
+    def weight(tree: CodeTree): Int = tree match {
+      case x: Fork => x.weight
+      case x: Leaf => x.weight
+    }
+
+is better written as follows:
+
+    def weight(tree: CodeTree): Int = tree match {
+      case Fork(_, _, _, w) => w
+      case Leaf(_, w)       => w
+    }
 
 
 ### Week 3: Object-Oriented Sets (TweetSet)
