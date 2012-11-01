@@ -97,7 +97,7 @@ Every code tree (leaf or fork) contains the the full weight and list of characte
 Lists can be concatenated with either `:::`, as most solutions do, or using the `++` operator. The latter has the advantage of being applicable to other sequence types (and also exists for other collection types), while `:::` only exists for lists.
 
 
-### #4.3 Using "isEmtpy", "head" and "tail" instead of Pattern Matching
+### #4.3 Using "isEmpty", "head" and "tail" instead of Pattern Matching
 
 Some submissions make extensive use of `isEmpty`, `head` and `tail` instead of using pattern matches on lists. The corresponding code is longer and less elegant, for example
 
