@@ -89,7 +89,7 @@ The following table indicates how often each of the issues occurred during this 
 
 ### #4.1 Unnecessary recursive Computation for "weight" and / or "chars"
 
-Every code tree (leaf or fork) contains the the full weight and list of characters. Therefore, implementing `def weight` and `def chars` does not require a recursive computation.
+Every code tree (leaf or fork) contains the full weight and list of characters. Therefore, implementing `def weight` and `def chars` does not require a recursive computation.
 
 
 ### #4.2 List Concatenation with :::
@@ -129,7 +129,7 @@ Note that the `counter` parameter is not required, the method can be written as 
 
 ### #4.4 Calling "sort" in a recursive Function
 
-To sort the the list of frequencies, some solutions of `makeOrderedLeafList` call `sort` in every iteration - this is unnecessary, calling it once on the entire list would be enough. To avoid the problem, a helper method might be required. Example:
+To sort the list of frequencies, some solutions of `makeOrderedLeafList` call `sort` in every iteration - this is unnecessary, calling it once on the entire list would be enough. To avoid the problem, a helper method might be required. Example:
 
     def makeOrderedLeafList(freqs: List[(Char, Int)]): List[Leaf] =
       freqs.sortWith((a,b) => a._2 <= b._2) match {
@@ -169,7 +169,7 @@ is better written as follows:
 
 ### Week 3: Object-Oriented Sets (TweetSet)
 
-The following table indicates how often each of the issues occured during this assignment (the [Scala Style Guide](?page=ScalaStyleGuide) describes the first 12 issues).
+The following table indicates how often each of the issues occurred during this assignment (the [Scala Style Guide](?page=ScalaStyleGuide) describes the first 12 issues).
 
 <table>
   <tr><td>#1 (casts)</td><td>1 %</td></tr>
