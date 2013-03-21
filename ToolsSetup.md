@@ -16,8 +16,8 @@ title: Tools Setup
 In order to work on the programming assignments, you need to have the following tools installed on your machine:
 
  - JDK, the Java Development Kit, version 1.6 or 1.7
- - Sbt, a build tool for Scala, version 0.12.0
- - The Scala IDE for Eclipse and the Scala Worksheet
+ - Sbt, a build tool for Scala, version 0.12.2
+ - The Scala IDE for Eclipse
 
 Please follow the instructions on this page carefully. You can also watch one of the following videos that explain how to set up your machine:
 
@@ -38,7 +38,7 @@ Please follow the instructions on this page carefully. You can also watch one of
 
 * **Manual Installation**: To install the JDK manually on a Linux system, follow these steps:
 
-  1. Download the `.tar.gz` archive from [http://www.oracle.com/technetwork/java/javase/downloads/jdk7u7-downloads-1836413.html](http://www.oracle.com/technetwork/java/javase/downloads/jdk7u7-downloads-1836413.html)
+  1. Download the `.tar.gz` archive from [http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
   1. Unpack the downloaded archive to a directory of your choice
   1. Add the `bin/` directory of the extracted JDK to the `PATH` environment variable. Open the file `~/.bashrc` in an editor (create it if it doesn't exist) and add the following line  
   ```export PATH=/PATH/TO/YOUR/jdk1.7.0-VERSION/bin:$PATH```
@@ -53,7 +53,7 @@ To verify your JDK installation, open the `Terminal` application in `/Applicatio
 
 ### Windows
 
- - Download the JDK installer for Windows from [http://www.oracle.com/technetwork/java/javase/downloads/jdk7u7-downloads-1836413.html](http://www.oracle.com/technetwork/java/javase/downloads/jdk7u7-downloads-1836413.html)
+ - Download the JDK installer for Windows from [http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
  - Run the installer
  - Add the `bin\` directory of the installed JDK to the `PATH` environment variable, as described here: [http://www.java.com/en/download/help/path.xml](http://www.java.com/en/download/help/path.xml)
 
@@ -64,7 +64,7 @@ To verify the JDK installation, open the Command Prompt and type `java -version`
 
 ### Linux
 
- - Download sbt from here: [http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.0/sbt.tgz](http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.0/sbt.tgz)
+ - Download sbt from here: [http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.2/sbt.tgz](http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.2/sbt.tgz)
  - Unpack the archive to a directory of your choice
  - Add the `bin/` directory to the `PATH` environment variable. Open the file `~/.bashrc` in an editor (create it if it doesn't exist) and add the following line  
 ```export PATH=/PATH/TO/YOUR/sbt/bin:$PATH```
@@ -77,7 +77,7 @@ If you use the [homebrew](http://mxcl.github.com/homebrew/) package manager, sim
 
 Otherwise, install sbt by following these steps:
 
- - Download sbt from here: [http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.0/sbt.tgz](http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.0/sbt.tgz)
+ - Download sbt from here: [http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.2/sbt.tgz](http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.2/sbt.tgz)
  - Unpack the archive to a directory of your choice
  - Add the `bin/` directory to the `PATH` environment variable. Open the file `~/.bash_profile` in an editor (create it if it doesn't exist) and add the following line  
 ```export PATH=/PATH/TO/YOUR/sbt/bin:$PATH```
@@ -86,7 +86,7 @@ Verify that sbt is installed correctly: Open a new terminal (to apply the change
 
 ### Windows
 
- - Download the sbt installer from here: [http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.0/sbt.msi](http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.0/sbt.msi)
+ - Download the sbt installer from here: [http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.2/sbt.msi](http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.2/sbt.msi)
  - Run the installer
 
 Verify that sbt is installed correctly: open the Command Prompt and type `sbt sbt-version`, you should see the version number of sbt (the first time you run it, sbt will download libraries from the internet). If you have problems installing sbt, ask for help on the forums.
@@ -96,9 +96,9 @@ Verify that sbt is installed correctly: open the Command Prompt and type `sbt sb
 
 You can download the Scala IDE for eclipse with the Scala Worksheet pre-installed from the following URL:
 
-[http://typesafe.com/stack/scala_ide_download](http://typesafe.com/stack/scala_ide_download)
+[http://typesafe.com/stack/scala_ide_download](http://www.typesafe.com/stack/downloads/scala-ide)
 
-After downloading the archive for your operating system, simply unpack it start eclipse. Eclipse requires you to select a workspace on startup. We recommmend you create one workspace directory for this class and use it for all assignments.
+After downloading the archive for your operating system, simply unpack it and start eclipse. Eclipse requires you to select a workspace on startup. We recommmend you create one workspace directory for this class and use it for all assignments.
 
 
 ### Hello World: Scala IDE and the Scala Worksheet
@@ -132,7 +132,7 @@ Creating a Scala Worksheet is very easy:
 
 1. Right-click on the package `greeter` in the hello world project that you just created
 1. Select "New" - "Scala Worksheet"
-1. Choose a name for your worksheet
+1. Choose a name for your worksheet (different than `Hello` or the name you chose for the "Scala Object" before)
 
 Now you can type some Scala code into the worksheet. Every time you save the file, the content of the worksheet will be evaluated. Copy the following code into the object of your worksheet:
 
