@@ -96,7 +96,7 @@ Verify that sbt is installed correctly: open the Command Prompt and type `sbt sb
 
 You can download the Scala IDE for eclipse with the Scala Worksheet pre-installed from the following URL:
 
-[http://typesafe.com/stack/scala_ide_download](http://www.typesafe.com/stack/downloads/scala-ide) (**Make sure to download the IDE for Scala version 2.10.0!**)
+[http://typesafe.com/stack/scala_ide_download](http://www.typesafe.com/stack/downloads/scala-ide) (**Make sure to download the IDE for Scala version 2.10.1!**)
 
 After downloading the archive for your operating system, simply unpack it and start eclipse. Eclipse requires you to select a workspace on startup. We recommend you create one workspace directory for this class and use it for all assignments.
 
