@@ -5,7 +5,7 @@ title: Grading Policy
 
 The grade that you will obtain at the end of this class is based on your performance in the programming assignments. Your answers to the in-video quizzes are not taken into account for the final grade.
 
-You can re-submit every assignment as often as you like. Only the best of your submissions will be considered: the grade of each assignment is the grade of your best submission for that assignment.
+You can re-submit every assignment **up to five times**. The first five attempts will have no re-submission penalty, however the sixth and later submission attempts will earn zero credit. Only the best of your submissions will be considered: the grade of each assignment is the grade of your best submission for that assignment.
 
 ### Deadlines
 
@@ -18,4 +18,4 @@ The hard deadline is defined to be 5 days after the soft deadline: no more submi
 
 ### Time Zones
 
-Please be **careful about time zones**: make sure you don't miss a deadline by forgetting to convert the time of the deadline to your local time zone.
+Please be **careful about time zones**: make sure you don't miss a deadline by forgetting to convert the time of the deadline to your local time zone. If you set your local time zone in your Coursera profile, all deadlines will be shown in your local time zone.
