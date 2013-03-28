@@ -33,7 +33,7 @@ Please follow the instructions on this page carefully. You can also watch one of
 * **Ubuntu, Debian**: To install the JDK using apt-get, execute the following command in a terminal
 `sudo apt-get install openjdk-7-jdk`
 
-* **Fedora, Oracle, Red Had**: To install the JDK using yum, execute the following command in a terminal
+* **Fedora, Oracle, Red Hat**: To install the JDK using yum, execute the following command in a terminal
 `su -c "yum install java-1.7.0-openjdk-devel"`
 
 * **Manual Installation**: To install the JDK manually on a Linux system, follow these steps:
