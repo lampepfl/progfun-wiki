@@ -210,6 +210,7 @@ Here are a few example patterns
                                // xs to the tail. xs could be Nil or some other list.
       case 1 :: 2 :: cs => ... // lists that starts with 1 and then 2
       case (x, y) :: ps => ... // a list where the head element is a pair
+      case _ => ...            // default case if none of the above matches
     }
     
 The last example shows that every pattern consists of sub-patterns: it
