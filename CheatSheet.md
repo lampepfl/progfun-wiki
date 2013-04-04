@@ -19,7 +19,7 @@ There are certainly a lot of things that can be improved! If you would like to c
 - Call by name: evaluates the function first, and then evaluates the arguments if need be
 
 <!-- code -->
-
+```scala
     def example = 2      // evaluated when called
     val example = 2      // evaluated immediately
     lazy val example = 2 // evaluated once when needed
@@ -27,11 +27,12 @@ There are certainly a lot of things that can be improved! If you would like to c
     def square(x: Double)    // call by value
     def square(x: => Double) // call by name
     def myFct(bindings: Int*) { ... } // bindings is a sequence of int, containing a varying # of arguments
+```
 
 ## Higher order functions
 
 These are functions that take a function as a parameter or return functions.
-
+```scala
     // sum() returns a function that takes two integers and returns an integer  
     def sum(f: Int => Int): (Int, Int) => Int = {  
       def sumf(a: Int, b: Int): Int = {...}  
@@ -48,17 +49,19 @@ These are functions that take a function as a parameter or return functions.
     def cube(x: Int) => x * x * x  
     sum(x => x * x * x)(1, 10) // sum of cubes from 1 to 10
     sum(cube)(1, 10)           // same as above      
+```
 
 ## Currying
 
 Converting a function with multiple arguments into a function with a
 single argument that returns another function.
-
+```scala
     def f(a: Int, b: Int): Int // uncurried version (type is (Int, Int) => Int)
     def f(a: Int)(b: Int): Int // curried version (type is Int => Int => Int)
+```
     
 ## Classes
-
+```scala
     class MyClass(x: Int, y: Int) {           // Defines a new type MyClass with a constructor  
       require(y > 0, "y must be positive")    // precondition, triggering an IllegalArgumentException if not met  
       def this (x: Int) = { ... }             // auxiliary constructor   
@@ -71,6 +74,7 @@ single argument that returns another function.
       }
 
     new MyClass(1, 2) // creates a new object of type
+```
 
 `this` references the current object, `assert(<condition>)` issues `AssertionError` if condition
 is not met. See `scala.Predef` for `require`, `assume` and `assert`.
@@ -99,7 +103,7 @@ The associativity of an operator is determined by its last character: Right-asso
 Note that assignment operators have lowest precedence. (Read Scala Language Specification 2.9 sections 6.12.3, 6.12.4 for more info)
 
 ## Class hierarchies
-
+```scala
     abstract class TopLevel {     // abstract class  
       def method1(x: Int): Int   // abstract method  
       def method2(x: Int): Int = { ... }  
@@ -111,18 +115,22 @@ Note that assignment operators have lowest precedence. (Read Scala Language Spec
     }
 
     object MyObject extends TopLevel { ... } // defines a singleton object. No other instance can be created
+```
 
 To create an runnable application in Scala:
 
+```scala
     object Hello {  
       def main(args: Array[String]) = println("Hello world")  
     }
+```
     
 or
-
+```scala
     object Hello extends App {
       println("Hello World")
     }
+```
 
 ## Class Organization
 
@@ -136,9 +144,10 @@ or
 - All members of packages `scala` and `java.lang` as well as all members of the object `scala.Predef` are automatically imported.
 
 - Traits are similar to Java interfaces, except they can have non-abstract members:
-
+```scala
         trait Planar { ... }
         class Square extends Shape with Planar
+```
 
 - General object hierarchy:
 
@@ -150,16 +159,18 @@ or
 ## Type Parameters
 
 Similar to C++ templates or Java generics. These can apply to classes, traits or functions.
-
+```scala
     class MyClass[T](arg1: T) { ... }  
     new MyClass[Int](1)  
     new MyClass(1)   // the type is being inferred, i.e. determined based on the value arguments  
+```
 
 It is possible to restrict the type being used, e.g.
-
+```scala
     def myFct[T <: TopLevel](arg: T): T = { ... } // T must derive from TopLevel or be TopLevel
     def myFct[T >: Level1](arg: T): T = { ... }   // T must be a supertype of Level1
     def myFct[T >: Level1 <: Top Level](arg: T): T = { ... }
+```
 
 ## Variance
 
@@ -170,15 +181,16 @@ If `C[A] <: C[B]`, `C` is covariant
 If `C[A] >: C[B]`, `C` is contravariant
 
 Otherwise C is nonvariant
-
+```scala
     class C[+A] { ... } // C is covariant
     class C[-A] { ... } // C is contravariant
     class C[A]  { ... } // C is nonvariant
+```
 
 For a function, if `A2 <: A1` and `B1 <: B2`, then `A1 => B1 <: A2 => B2`.
 
 Functions must be contravariant in their argument types and covariant in their result types, e.g.
-
+```scala
     trait Function1[-T, +U] {
       def apply(x: T): U
     } // Variance check is OK because T is contravariant and U is covariant
@@ -186,7 +198,8 @@ Functions must be contravariant in their argument types and covariant in their r
     class Array[+T] {
       def update(x: T)
     } // variance checks fails
-    
+```
+
 Find out more about variance in
 [lecture 4.4](https://class.coursera.org/progfun-2012-001/lecture/81)
 and [lecture 4.5](https://class.coursera.org/progfun-2012-001/lecture/83)
@@ -194,14 +207,15 @@ and [lecture 4.5](https://class.coursera.org/progfun-2012-001/lecture/83)
 ## Pattern Matching
 
 Pattern matching is used for decomposing data structures:
-
+```scala
     unknownObject match {
       case MyClass(n) => ...
       case MyClass2(a, b) => ...
     }
+```
 
 Here are a few example patterns
-
+```scala
     (someList: List[T]) match {
       case Nil => ...          // empty list
       case x :: Nil => ...     // list with only one element
@@ -212,7 +226,8 @@ Here are a few example patterns
       case (x, y) :: ps => ... // a list where the head element is a pair
       case _ => ...            // default case if none of the above matches
     }
-    
+```
+
 The last example shows that every pattern consists of sub-patterns: it
 only matches lists with at least one element, where that element is a
 pair. `x` and `y` are again patterns that could match only specific
@@ -223,7 +238,7 @@ types.
 Pattern matching can also be used for `Option` values. Some
 functions (like `Map.get`) return a value of type `Option[T]` which
 is either a value of type `Some[T]` or the value `None`:
-
+```scala
     val myMap = Map("a" -> 42, "b" -> 43)
     def getMapValue(s: String): String = {
       myMap get s match {
@@ -233,30 +248,33 @@ is either a value of type `Some[T]` or the value `None`:
     }
     getMapValue("a")  // "Value found: 42"
     getMapValue("c")  // "No value found"
-    
+```
+
 Most of the times when you write a pattern match on an option value,
 the same expression can be written more concisely using combinator
 methods of the `Option` class. For example, the function `getMapValue`
 can be written as follows: 
-
+```scala
     def getMapValue(s: String): String =
       myMap.get(s).map("Value found: " + _).getOrElse("No value found")
+```
 
 ### Pattern Matching in Anonymous Functions
 
 Pattern matches are also used quite often in anonymous functions:
-
+```scala
     val pairs: List[(Char, Int)] = ('a', 2) :: ('b', 3) :: Nil
     val chars: List[Char] = pairs.map(p => p match {
       case (ch, num) => ch
     })
+```
 
 Instead of `p => p match { case ... }`, you can simply write `{case ...}`, so the above example becomes more concise:
-
+```scala
     val chars: List[Char] = pairs map {
       case (ch, num) => ch
     }
-
+```
 
 ## Collections
 
@@ -282,7 +300,7 @@ Scala defines several collection classes:
 - Scala also has mutable maps and sets; these should only be used if there are performance issues with immutable types
 
 ### Examples
-
+```scala
     val fruitList = List("apples", "oranges", "pears")
     // Alternative syntax for lists
     val fruit = "apples" :: ("oranges" :: ("pears" :: Nil)) // parens optional, :: is right-associative
@@ -367,25 +385,28 @@ Scala defines several collection classes:
              // In the Stream's cons operator, the second parameter (the tail)
              // is defined as a "call by name" parameter.
              // Note that x::xs always produces a List
+```
 
 ## Pairs (similar for larger Tuples)
-
+```scala
     val pair = ("answer", 42)   // type: (String, Int)
     val (label, value) = pair   // label = "answer", value = 42  
     pair._1 // "answer"  
     pair._2 // 42  
+```
 
 ## Ordering
 
 There is already a class in the standard library that represents orderings: `scala.math.Ordering[T]` which contains
 comparison functions such as `lt()` and `gt()` for standard types. Types with a single natural ordering should inherit from 
 the trait `scala.math.Ordered[T]`.
-
+```scala
     import math.Ordering  
 
     def msort[T](xs: List[T])(implicit ord: Ordering) = { ...}  
     msort(fruits)(Ordering.String)  
     msort(fruits)   // the compiler figures out the right ordering  
+```
 
 ## For-Comprehensions
 
@@ -401,15 +422,17 @@ The general form is `for (s) yield e`
 - `e` is an element of the resulting collection
 
 ### Example 1
-
+```scala
     // list all combinations of numbers x and y where x is drawn from
     // 1 to M and y is drawn from 1 to N
     for (x <- 1 to M; y <- 1 to N)
       yield (x,y)
+```
 
 is equivalent to
-        
+```scala        
     (1 to M) flatMap (x => (1 to N) map (y => (x, y)))
+```
 
 ### Translation Rules
 
@@ -427,20 +450,22 @@ as you define `map`, `flatMap` and `filter`.
 For more, see [lecture 6.5](https://class.coursera.org/progfun-2012-001/lecture/111).
 
 ### Example 2
-
+```scala
     for {  
       i <- 1 until n  
       j <- 1 until i  
       if isPrime(i + j)  
     } yield (i, j)  
-    
-is equivalent to
+```
 
+is equivalent to
+```scala
     for (i <- 1 until n; j <- 1 until i if isPrime(i + j))
         yield (i, j)  
-        
+```
+
 is equivalent to
-
+```scala
     (1 until n).flatMap(i => (1 until i).filter(j => isPrime(i + j)).map(j => (i, j)))
-
+```
 
