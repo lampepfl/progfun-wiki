@@ -158,7 +158,7 @@ or
 
 ## Type Parameters
 
-Similar to C++ templates or Java generics. These can apply to classes, traits or functions.
+Conceptually similar to C++ templates or Java generics. These can apply to classes, traits or functions.
 ```scala
     class MyClass[T](arg1: T) { ... }  
     new MyClass[Int](1)  
