@@ -117,7 +117,7 @@ Note that assignment operators have lowest precedence. (Read Scala Language Spec
     object MyObject extends TopLevel { ... } // defines a singleton object. No other instance can be created
 ```
 
-To create an runnable application in Scala:
+To create a runnable application in Scala:
 
 ```scala
     object Hello {  
