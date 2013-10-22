@@ -281,22 +281,22 @@ Instead of `p => p match { case ... }`, you can simply write `{case ...}`, so th
 Scala defines several collection classes:
 
 ### Base Classes
-- `Iterable` (collections you can iterate on)
-- `Seq` (ordered sequences)
-- `Set`
-- `Map` (lookup data structure)
+- [`Iterable`](http://www.scala-lang.org/api/current/index.html#scala.collection.Iterable) (collections you can iterate on)
+- [`Seq`](http://www.scala-lang.org/api/current/index.html#scala.collection.Seq) (ordered sequences)
+- [`Set`](http://www.scala-lang.org/api/current/index.html#scala.collection.Set)
+- [`Map`](http://www.scala-lang.org/api/current/index.html#scala.collection.Map) (lookup data structure)
 
 ### Immutable Collections
-- `List` (linked list, provides fast sequential access)
-- `Stream` (same as List, except that the tail is evaluated only on demand)
-- `Vector` (array-like type, implemented as tree of blocks, provides fast random access)
-- `Range` (ordered sequence of integers with equal spacing)
-- `String` (Java type, implicitly converted to a character sequence, so you can treat every string like a `Seq[Char]`)
-- `Map` (collection that maps keys to values)
-- `Set` (collection without duplicate elements)
+- [`List`](http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.List) (linked list, provides fast sequential access)
+- [`Stream`](http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.Stream) (same as List, except that the tail is evaluated only on demand)
+- [`Vector`](http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.Vector) (array-like type, implemented as tree of blocks, provides fast random access)
+- [`Range`](http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.Range) (ordered sequence of integers with equal spacing)
+- [`String`](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/String.html) (Java type, implicitly converted to a character sequence, so you can treat every string like a `Seq[Char]`)
+- [`Map`](http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.Map) (collection that maps keys to values)
+- [`Set`](http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.Set) (collection without duplicate elements)
 
 ### Mutable Collections
-- `Array` (Scala arrays are native JVM arrays at runtime, therefore they are very performant)
+- [`Array`](http://www.scala-lang.org/api/current/index.html#scala.Array) (Scala arrays are native JVM arrays at runtime, therefore they are very performant)
 - Scala also has mutable maps and sets; these should only be used if there are performance issues with immutable types
 
 ### Examples
