@@ -13,7 +13,7 @@ Classes in Scala are very similar to classes in Java. They are templates contain
 
 In Scala there exists a special kind of class named `case` classes. You will learn about case classes during the course.
 
-Classes in Scala cannot have static members. You can use objects (see below) to achieve similar functionalities as with static members in Java.
+Classes in Scala cannot have static members. You can use objects (see below) to achieve similar functionality as with static members in Java.
 
 
 ### Traits
@@ -56,7 +56,7 @@ In Scala, the `main` or entry point method is defined in an `object`. An object 
 Scala source code is stored in text files with the extension `.scala`. Typically Scala programmers create one source file for each class, or one source file for a class hierarchy: In fact, Scala allows multiple classes and objects to be defined in the same source file.
 
 - The name of a Scala source file can be chosen freely, but it is recommended to use the name of a class which is defined in that file.
-- Package hierarchies should be reflected in directory structure: a source file defining `class C` in package `foo.bar` should be stored in a subdirecotory as `foo/bar/C.scala`. Scala does not really enforce this convention, but some tools such as the Scala IDE for eclipse might have problems otherwise.
+- Package hierarchies should be reflected in directory structure: a source file defining `class C` in package `foo.bar` should be stored in a subdirectory as `foo/bar/C.scala`. Scala does not really enforce this convention, but some tools such as the Scala IDE for eclipse might have problems otherwise.
 
 The scala compiler compiles `.scala` source files to `.class` files, like the Java compiler. Classfiles are binary files containing machine code for the Java Virtual Machine. In order to run a Scala program, the JVM has to know the directory where classfiles are stored. This parameter is called the "classpath".
 
