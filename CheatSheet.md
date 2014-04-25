@@ -71,7 +71,7 @@ single argument that returns another function.
       val nb3 = x + y                         // computed only once  
       override def toString =                 // overridden method  
           member1 + ", " + member2 
-      }
+    }
 
     new MyClass(1, 2) // creates a new object of type
 ```
@@ -104,7 +104,7 @@ Note that assignment operators have lowest precedence. (Read Scala Language Spec
 
 ## Class hierarchies
 ```scala
-    abstract class TopLevel {     // abstract class  
+    abstract class TopLevel {    // abstract class  
       def method1(x: Int): Int   // abstract method  
       def method2(x: Int): Int = { ... }  
     }
