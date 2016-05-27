@@ -1,5 +1,7 @@
-Changes need to be published manually to coursera.
+Changes need to be published manually to Coursera.
 
-  - Install jekyll
+  - Install Jekyll
+
   - Run "jekyll serve" on your machine
+
   - Copy the generated HTML and paste it into the corresponding page on the Coursera class site
