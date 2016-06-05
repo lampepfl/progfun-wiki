@@ -220,18 +220,19 @@ Here are a few example patterns
       case Nil => ...          // empty list
       case x :: Nil => ...     // list with only one element
       case List(x) => ...      // same as above
-      case x :: xs => ...      // a list with at least one element. x is bound to the head,
-                               // xs to the tail. xs could be Nil or some other list.
       case 1 :: 2 :: cs => ... // lists that starts with 1 and then 2
       case (x, y) :: ps => ... // a list where the head element is a pair
+      case x :: xs => ...      // a list with at least one element. x is bound to the head,
+                               // xs to the tail. xs could be Nil or some other list.      
       case _ => ...            // default case if none of the above matches
     }
 ```
 
-The last example shows that every pattern consists of sub-patterns: it
+The fifth example shows that every pattern consists of sub-patterns: it
 only matches lists with at least one element, where that element is a
 pair. `x` and `y` are again patterns that could match only specific
-types.
+types. The order of matches are important from specific to common cases, 
+because the first correct match termintates lookup.
 
 ### Options
 
