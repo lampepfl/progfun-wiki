@@ -259,6 +259,104 @@ can be written as follows:
       myMap.get(s).map("Value found: " + _).getOrElse("No value found")
 ```
 
+While performing pattern matching, the most useful Option functions to 
+write code concisely and efficiently woulbe be isDefined, contains,
+isEmpty & getOrElse.
+
+Here are a few examples ,
+
+option.isDefined is an alternative for the following snippets 
+
+```scala
+option match {
+    case Some(_) => true
+    case None => false
+} 
+// option.isDefined would make this more concise 
+
+option != None
+//option.isDefined is more straightforward way
+
+option.isInstanceOf[Some[_]]
+//option.isDefined straightforward
+
+!option.isEmpty
+//someSequence.isDefined is a better choice since it avoids 
+the negation
+```
+A few places where option.getOrElse is a better choice 
+
+```scala
+if (v != null) Some(v) else None
+// can be written as 
+option.getOrElse(null)
+----
+if (option.isDefined) option.get else value
+
+option match {
+  case Some(it) => it
+  case None => value
+}
+//can be written as
+option.getOrElse(value)
+----
+if (option1.isDefined) option1 else option2
+
+option1 match {
+  case Some(it) => Some(it)
+  case None => option2
+}
+//can be written as 
+ option1.orElse(option2)
+---
+ map.get(key).getOrElse(value)
+ //can be written as
+ map.getOrElse(key, value)
+```
+option.isEmpty is an alternative for the these 
+
+```scala
+option == None
+//option.isEmpty is more straightforward way
+
+option match {
+    case Some(_) => false
+    case None => true
+}
+//option.isEmpty is concise 
+
+!option.isDefined
+!option.nonEmpty
+//someSequence.isEmpty is a better choice in both these 
+//cases since it avoids the negation
+```
+And option.contains would be helpful in the following cases
+
+```scala
+option == Some(value)
+// it is more concise when it's 
+option.contains(value)
+
+---
+option.isDefined && option.get == x
+
+if (option.isDefined) option.get == x else false
+
+option match {
+  case Some(it) => it == x
+  case None => false
+}
+//definitely more concise when its 
+option.contains(x)
+
+---
+// Even though negation is not a good practice, its not advisible
+//to compare value with Some. And hence
+!option.contains(value)
+//is better than
+option != Some(value)
+```
+
 ### Pattern Matching in Anonymous Functions
 
 Pattern matches are also used quite often in anonymous functions:
