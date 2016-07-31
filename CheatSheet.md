@@ -35,7 +35,7 @@ These are functions that take a function as a parameter or return functions.
 ```scala
     // sum() returns a function that takes two integers and returns an integer  
     def sum(f: Int => Int): (Int, Int) => Int = {  
-      def sumf(a: Int, b: Int): Int = {...}  
+      def sumf(a: Int, b: Int): Int = f(a) + f(b)  
       sumf  
     } 
     
@@ -47,7 +47,7 @@ These are functions that take a function as a parameter or return functions.
     sum(x => x * x * x)                 // Same anonymous function with type inferred
 
     def cube(x: Int) = x * x * x  
-    sum(x => x * x * x)(1, 10) // sum of cubes from 1 to 10
+    sum(x => x * x * x)(1, 10) // sum of 1 cubed and 10 cubed
     sum(cube)(1, 10)           // same as above      
 ```
 
