@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Cheat Sheet
----
+---   
 
 This cheat sheet originated from the forum, credits to Laurent Poulain.
 We copied it and changed or added a few things.
