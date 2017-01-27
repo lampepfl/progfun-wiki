@@ -195,7 +195,7 @@ Functions must be contravariant in their argument types and covariant in their r
       def apply(x: T): U
     } // Variance check is OK because T is contravariant and U is covariant
 
-    class Array[+T] {
+    class Array[+T] { 
       def update(x: T)
     } // variance checks fails
 ```
