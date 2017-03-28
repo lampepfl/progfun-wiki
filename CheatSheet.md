@@ -440,9 +440,9 @@ A for-expression looks like a traditional for loop but works differently interna
 
 `for (x <- e1) yield e2` is translated to `e1.map(x => e2)`
 
-`for (x <- e1 if f) yield e2` is translated to `for (x <- e1.filter(x => f)) yield e2`
+`for (x <- e1 if f; s) yield e2` is translated to `for (x <- e1.withFilter(x => f); s) yield e2`
 
-`for (x <- e1; y <- e2) yield e3` is translated to `e1.flatMap(x => for (y <- e2) yield e3)`
+`for (x <- e1; y <- e2; s) yield e3` is translated to `e1.flatMap(x => for (y <- e2; s) yield e3)`
 
 This means you can use a for-comprehension for your own type, as long
 as you define `map`, `flatMap` and `filter`.
