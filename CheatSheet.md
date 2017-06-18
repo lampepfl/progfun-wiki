@@ -29,7 +29,7 @@ There are certainly a lot of things that can be improved! If you would like to c
     def myFct(bindings: Int*) = { ... } // bindings is a sequence of int, containing a varying # of arguments
 ```
 
-## Higher order functions
+## Higher  order functions
 
 These are functions that take a function as a parameter or return functions.
 ```scala
