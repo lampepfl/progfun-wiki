@@ -468,4 +468,3 @@ is equivalent to
 ```scala
     (1 until n).flatMap(i => (1 until i).filter(j => isPrime(i + j)).map(j => (i, j)))
 ```
-
