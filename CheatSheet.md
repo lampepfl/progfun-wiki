@@ -385,6 +385,8 @@ Scala defines several collection classes:
              // In the Stream's cons operator, the second parameter (the tail)
              // is defined as a "call by name" parameter.
              // Note that x::xs always produces a List
+    def integers(start: Int = 0): Stream[Int] = start #:: integers(start + 1) // infinite sequence of integers starting at "start"
+    integers(0) drop 10 take 100 // New stream starting at 10
 ```
 
 ## Pairs (similar for larger Tuples)
