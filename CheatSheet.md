@@ -356,7 +356,7 @@ Scala defines several collection classes:
     xs forall p    // true if p(x) is true for all elements
     xs zip ys      // returns a list of pairs which groups elements with same index together
     xs unzip       // opposite of zip: returns a pair of two lists
-    xs.flatMap f   // applies the function to all elements and concatenates the result
+    xs flatMap f   // applies the function to all elements and concatenates the result
     xs.sum         // sum of elements of the numeric collection
     xs.product     // product of elements of the numeric collection
     xs.max         // maximum of collection
