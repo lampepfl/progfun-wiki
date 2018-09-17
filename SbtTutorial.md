@@ -2,58 +2,36 @@
 layout: page
 title: Sbt Tutorial
 ---
-
 We use sbt for building, testing, running and submitting assignments. This tutorial explains all sbt commands that you will use during our class. The [Tools Setup](view?page=ToolsSetup) page explains how to install sbt.
-
 ## Starting up sbt
-
 In order to start sbt, open a terminal ("Command Prompt" in Windows) and navigate to the directory of the assignment you are working on. Typing `sbt` will open the sbt command prompt.
-
     shell$ cd /path/to/progfun-project-directory                        # This is the shell of the operating system
     shell$ sbt
     > _                                                                 # This is the sbt shell
-
-
 ## Running the Scala Interpreter
-
 You can start the Scala interpreter inside sbt using the `console` task. The interpreter (also called REPL, for "read-eval-print loop") is useful for trying out snippets of Scala code. Note that the interpreter can only be started if there are no compilation errors in your code.
-
 In order to quit the interpreter and get back to sbt, type `ctrl-d`.
-
     > console
     [info] Starting scala interpreter...
     Welcome to Scala version 2.10.1 (Java HotSpot(TM) 64-Bit Server VM, Java 1.7.0_04-ea).
     Type in expressions to have them evaluated.
     Type :help for more information.
-    
-    scala> println("Oh, hai!")                                          # This is the Scala REPL, type some Scala code
-    Oh, hai!
-    
+    scala> println("Oh, hai!")                                          # This is the Scala REPL, type some Scala
     scala> val l = List(1, 2, 3)
     l: List[Int] = List(1, 2, 3)
-    
     scala> val squares = l.map(x => x * x)
     squares: List[Int] = List(1, 4, 9)
-    
     scala>                                                              # Type [ctrl-d] to exit the Scala REPL
     [success] Total time: 20 s, completed Mar 21, 2013 11:02:31 AM
-    >                                                                   # We're back to the sbt shell
-
-
+    > # We're back to the sbt shell
 ## Compiling your Code
-
 The `compile` task will compile the source code of the assignment which is located in the directory `src/main/scala`.
-
     > compile
     [info] Compiling 4 Scala sources to /Users/aleksandar/example/target/scala-2.10.1/classes...
     [success] Total time: 1 s, completed Mar 21, 2013 11:04:46 PM
     > 
-
 If the source code contains errors, the error messages from the compiler will be displayed.
-
-
 ## Testing your Code
-
 The directory `src/test/scala` contains unit tests for the project. In order to run these tests in sbt, you can use the `test` command.
 
 

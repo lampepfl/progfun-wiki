@@ -6,13 +6,7 @@ title: Scala Style Guide
 On this page you can find a list of common issues that we detected while looking at some submissions.
 
 Some of the style issues can be detected by the automated style checker that we also use for the grading process. The style checker, which is based on [Scalastyle](http://www.scalastyle.org/), can be executed locally in sbt by running the `styleCheck` task.
-
-
 ## Common Issues
-
-
-### #1 Avoid Casts and Type Tests
-
 Never use `isInstanceOf` or `asInstanceOf` - there's always a better solution, both for the assignments, and also for any real-world Scala project.
 If you find yourself wanting to use casts, take a step back and think about what you're trying to achieve.
 Re-read the assignment instructions and have another look at the corresponding lecture videos.
