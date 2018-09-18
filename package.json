@@ -1,5 +1,10 @@
 {
   "dependencies": {
+    "@babel/code-frame": "^7.0.0",
+    "babel-code-frame": "^6.26.0",
+    "babel-template": "^6.26.0",
+    "generate": "^0.14.0",
+    "generate-function": "^2.3.1",
     "jekyll": "^3.0.0-beta1"
   }
 }
