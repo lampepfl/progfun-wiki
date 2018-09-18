@@ -4,24 +4,15 @@ title: Scala Style Guide
 ---
 On this page we will periodically publish feedback specific to individual assignments. For feedback which applies to coding style in general, visit the [Scala Style Guide](?page=ScalaStyleGuide) wiki page.
 <!--
-
 to unpack multiple submissions into a subfolder each, you can place all the "output" files in
 a folder and use these commands
-
   i=0;for f in *; do ((i += 1)) && mkdir s$i && unzip "$f" -d s$i; done
-
 open all files in sublime
-  
   find . -name Huffman.scala | xargs sb
-
-
 some regular expressions to detect common issues. example usage (should also work in sublime,
 open all files and use cmd-shift-f)
-
   find . -name Huffman.scala | xargs grep ";"
   find . -name Huffman.scala | xargs grep -l ";" | wc -l
-
-
 #1 "InstanceOf"
 #3 ".{123,}"  |  (".\{123,\}" for grep)
 #5 "temp", "tmp", "iter", "loop", "test", "help"
@@ -114,7 +105,6 @@ There is one form of pattern matching - type patterns - which should be avoided 
 A type pattern is equivalent to a type test and a cast:
     if (expr.isInstanceOf[T]) { val x = expr.asInstanceOf[T]...}
 In all cases where we found type patterns in the submissions, they should have been replaced by ordinary pattern matches. In an ordinary pattern, you can at the same time match on the type of a value and define value bindings for its fields. For example, the following implementation
-
     def weight(tree: CodeTree): Int = tree match {case x: Fork => x.weight  case x: Leaf => x.weight}
 is better written as follows:
     def weight(tree: CodeTree): Int = tree match {

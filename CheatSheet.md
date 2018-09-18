@@ -12,7 +12,6 @@ There are certainly a lot of things that can be improved! If you would like to c
 ## Evaluation Rules
 - Call by value: evaluates the function arguments before calling the function
 - Call by name: evaluates the function first, and then evaluates the arguments if need be
-<!-- code -->
 ```scala
     def example = 2      // evaluated when called
     val example = 2      // evaluated immediately
@@ -27,8 +26,7 @@ These are functions that take a function as a parameter or return functions.
     // sum() returns a function that takes two integers and returns an integer  
     def sum(f: Int => Int): (Int, Int) => Int = {  
       def sumf(a: Int, b: Int): Int = {...}  
-      sumf  
-    } 
+      sumf  } 
     // same as above. Its type is (Int => Int) => (Int, Int) => Int  
     def sum(f: Int => Int)(a: Int, b: Int): Int = { ... } 
     // Called like this
@@ -82,20 +80,16 @@ Note that assignment operators have lowest precedence. (Read Scala Language Spec
     abstract class TopLevel {    // abstract class  
       def method1(x: Int): Int   // abstract method  
       def method2(x: Int): Int = { ... }  
-    }
-    class Level1 extends TopLevel {  
+    }class Level1 extends TopLevel {  
       def method1(x: Int): Int = { ... }  
       override def method2(x: Int): Int = { ...} // TopLevel's method2 needs to be explicitly overridden  
-    }
-    object MyObject extends TopLevel { ... } // defines a singleton object. No other instance can be created
+    }  object MyObject extends TopLevel { ... } // defines a singleton object. No other instance can be created
 ```
 To create a runnable application in Scala:
-```scala
-    object Hello {def main(args: Array[String]) = println("Hello world")   }
+```scala object Hello {def main(args: Array[String]) = println("Hello world")   }
 ```
 or
-```scala
-    object Hello extends App {println("Hello World")}
+```scala    object Hello extends App {println("Hello World")}
 ```
 ## Class Organization
 - Classes and objects are organized in packages (`package myPackage`).
@@ -215,11 +209,9 @@ Scala defines several collection classes:
 - [`String`](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/String.html) (Java type, implicitly converted to a character sequence, so you can treat every string like a `Seq[Char]`)
 - [`Map`](http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.Map) (collection that maps keys to values)
 - [`Set`](http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.Set) (collection without duplicate elements)
-
 ### Mutable Collections
 - [`Array`](http://www.scala-lang.org/api/current/index.html#scala.Array) (Scala arrays are native JVM arrays at runtime, therefore they are very performant)
 - Scala also has mutable maps and sets; these should only be used if there are performance issues with immutable types
-
 ### Examples
 ```scala
     val fruitList = List("apples", "oranges", "pears")
@@ -229,7 +221,6 @@ Scala defines several collection classes:
     fruit.tail   // List("oranges", "pears")
     val empty = List()
     val empty = Nil
-
     val nums = Vector("louis", "frank", "hiromi")
     nums(1)                     // element at index 1, returns "frank", complexity O(log(n))
     nums.updated(2, "helena")   // new vector with a different string at index 2, complexity O(log(n))
@@ -262,7 +253,6 @@ Scala defines several collection classes:
     xs takeWhile p    // the longest prefix consisting of elements that satisfy p
     xs dropWhile p    // the remainder of the list after any leading element satisfying p have been removed
     xs span p         // same as (xs takeWhile p, xs dropWhile p)
-    
     List(x1, ..., xn) reduceLeft op    // (...(x1 op x2) op x3) op ...) op xn
     List(x1, ..., xn).foldLeft(z)(op)  // (...( z op x1) op x2) op ...) op xn
     List(x1, ..., xn) reduceRight op   // x1 op (... (x{n-1} op xn) ...)
@@ -311,7 +301,6 @@ comparison functions such as `lt()` and `gt()` for standard types. Types with a 
 the trait `scala.math.Ordered[T]`.
 ```scala
     import math.Ordering  
-
     def msort[T](xs: List[T])(implicit ord: Ordering) = { ...}  
     msort(fruits)(Ordering.String)  
     msort(fruits)   // the compiler figures out the right ordering  
@@ -325,7 +314,6 @@ The general form is `for (s) yield e`
 - If there are several generators (equivalent of a nested loop), the last generator varies faster than the first
 - You can use `{ s }` instead of `( s )` if you want to use multiple lines without requiring semicolons
 - `e` is an element of the resulting collection
-
 ### Example 1
 ```scala
     // list all combinations of numbers x and y where x is drawn from
@@ -333,18 +321,13 @@ The general form is `for (s) yield e`
     for (x <- 1 to M; y <- 1 to N)
       yield (x,y)
 ```
-
 is equivalent to
 ```scala        
     (1 to M) flatMap (x => (1 to N) map (y => (x, y)))
 ```
-
 ### Translation Rules
-
 A for-expression looks like a traditional for loop but works differently internally
-
 `for (x <- e1) yield e2` is translated to `e1.map(x => e2)`
-
 `for (x <- e1 if f) yield e2` is translated to `for (x <- e1.filter(x => f)) yield e2`
 `for (x <- e1; y <- e2) yield e3` is translated to `e1.flatMap(x => for (y <- e2) yield e3)`
 This means you can use a for-comprehension for your own type, as long
@@ -364,6 +347,5 @@ is equivalent to
         yield (i, j)  
 ```
 is equivalent to
-```scala
-    (1 until n).flatMap(i => (1 until i).filter(j => isPrime(i + j)).map(j => (i, j)))
+```scala (1 until n).flatMap(i => (1 until i).filter(j => isPrime(i + j)).map(j => (i, j)))
 ```
