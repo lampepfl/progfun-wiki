@@ -18,7 +18,7 @@ There are certainly a lot of things that can be improved! If you would like to c
 - Call by value: evaluates the function arguments before calling the function
 - Call by name: evaluates the function first, and then evaluates the arguments if need be
 
-<!-- code -->
+<!-- code --> 
 ```scala
     def example = 2      // evaluated when called
     val example = 2      // evaluated immediately
