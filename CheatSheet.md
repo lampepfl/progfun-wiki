@@ -355,7 +355,7 @@ Scala defines several collection classes:
     xs exists p    // true if there is at least one element for which predicate p is true
     xs forall p    // true if p(x) is true for all elements
     xs zip ys      // returns a list of pairs which groups elements with same index together
-    xs unzip       // opposite of zip: returns a pair of two lists
+    xs.unzip       // opposite of zip: returns a pair of two lists
     xs.flatMap f   // applies the function to all elements and concatenates the result
     xs.sum         // sum of elements of the numeric collection
     xs.product     // product of elements of the numeric collection
@@ -363,7 +363,7 @@ Scala defines several collection classes:
     xs.min         // minimum of collection
     xs.flatten     // flattens a collection of collection into a single-level collection
     xs groupBy f   // returns a map which points to a list of elements
-    xs distinct    // sequence of distinct entries (removes duplicates)
+    xs.distinct    // sequence of distinct entries (removes duplicates)
 
     x +: xs  // creates a new collection with leading element x
     xs :+ x  // creates a new collection with trailing element x
