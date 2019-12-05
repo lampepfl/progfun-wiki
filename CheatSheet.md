@@ -60,6 +60,12 @@ single argument that returns another function.
     def f(a: Int, b: Int): Int // uncurried version (type is (Int, Int) => Int)
     def f(a: Int)(b: Int): Int // curried version (type is Int => Int => Int)
 ```
+To curry an existing function :  
+```scala
+    val f2: (Int, Int) => Int = f // uncurried version (type is (Int, Int) => Int)
+    val f3: Int => Int => Int = f2.curried // transform it to a curried version (type is Int => Int => Int)
+    val f4: (Int, Int) => Int = f3.uncurried // go back to the uncurried version (type is (Int, Int) => Int)
+```
     
 ## Classes
 ```scala
