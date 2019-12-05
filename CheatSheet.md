@@ -333,14 +333,15 @@ Scala defines several collection classes:
 
     // Operations on sequences
     val xs = List(...)
-    xs.length   // number of elements, complexity O(n)
-    xs.last     // last element (exception if xs is empty), complexity O(n)
-    xs.init     // all elements of xs but the last (exception if xs is empty), complexity O(n)
-    xs take n   // first n elements of xs
-    xs drop n   // the rest of the collection after taking n elements
-    xs(n)       // the nth element of xs, complexity O(n)
-    xs ++ ys    // concatenation, complexity O(n)
-    xs.reverse  // reverse the order, complexity O(n)
+    xs.length         // number of elements, complexity O(n)
+    xs.last           // last element (exception if xs is empty), complexity O(n)
+    xs.init           // all elements of xs but the last (exception if xs is empty), complexity O(n)
+    xs take n         // first n elements of xs
+    xs drop n         // the rest of the collection after taking n elements
+    xs splitAt n      // same as (xs take n, xs drop n)
+    xs(n)             // the nth element of xs, complexity O(n)
+    xs ++ ys          // concatenation, complexity O(n)
+    xs.reverse        // reverse the order, complexity O(n)
     xs updated(n, x)  // same list than xs, except at index n where it contains x, complexity O(n)
     xs indexOf x      // the index of the first element equal to x (-1 otherwise)
     xs contains x     // same as xs indexOf x >= 0
