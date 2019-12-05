@@ -80,7 +80,7 @@ single argument that returns another function.
 ```
 
 `this` references the current object, `assert(<condition>)` issues `AssertionError` if condition
-is not met. See `scala.Predef` for `require`, `assume` and `assert`.
+is not met. See [`scala.Predef`](http://www.scala-lang.org/api/rc2/scala/Predef$.html) for `require`, `assume` and `assert`.
 
 ## Operators
 
