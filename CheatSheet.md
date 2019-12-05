@@ -62,18 +62,21 @@ single argument that returns another function.
     
 ## Classes
 ```scala
-    class MyClass(x: Int, y: Int) {           // Defines a new type MyClass with a constructor  
+    class MyClass(x: Int, val y: Int,
+                          var z: Int) {       // Defines a new type MyClass with a constructor
+                                              // x will not be available outside MyClass
+                                              // val will generate a getter for y
+                                              // var will generate a getter and a setter for z
       require(y > 0, "y must be positive")    // precondition, triggering an IllegalArgumentException if not met  
       def this (x: Int) = { ... }             // auxiliary constructor   
-      def nb1 = x                             // public method computed every time it is called  
-      def nb2 = y  
+      def nb1 = x                             // public method computed every time it is called    
       private def test(a: Int): Int = { ... } // private method  
       val nb3 = x + y                         // computed only once  
       override def toString =                 // overridden method  
-          member1 + ", " + member2 
+          x + ", " + y 
     }
 
-    new MyClass(1, 2) // creates a new object of type
+    new MyClass(1, 2, 3) // creates a new object of type
 ```
 
 `this` references the current object, `assert(<condition>)` issues `AssertionError` if condition
