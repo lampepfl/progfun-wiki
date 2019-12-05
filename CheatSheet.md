@@ -172,7 +172,7 @@ It is possible to restrict the type being used, e.g.
 ```scala
     def myFct[T <: TopLevel](arg: T): T = { ... } // T must derive from TopLevel or be TopLevel
     def myFct[T >: Level1](arg: T): T = { ... }   // T must be a supertype of Level1
-    def myFct[T >: Level1 <: Top Level](arg: T): T = { ... }
+    def myFct[T >: Level1 <: TopLevel](arg: T): T = { ... }
 ```
 
 ## Variance
