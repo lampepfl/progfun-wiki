@@ -291,12 +291,14 @@ Instead of `p => p match { case ... }`, you can simply write `{case ...}`, so th
 Scala defines several collection classes:
 
 ### Base Classes
-- [`Iterable`](http://www.scala-lang.org/api/current/index.html#scala.collection.Iterable) (collections you can iterate on)
-- [`Seq`](http://www.scala-lang.org/api/current/index.html#scala.collection.Seq) (ordered sequences)
-- [`Set`](http://www.scala-lang.org/api/current/index.html#scala.collection.Set)
-- [`Map`](http://www.scala-lang.org/api/current/index.html#scala.collection.Map) (lookup data structure)
+
+- [`Iterable`](https://www.scala-lang.org/api/current/scala/collection/Iterable.html) (collections you can iterate on)
+- [`Seq`](https://www.scala-lang.org/api/current/scala/collection/Seq.html) (ordered sequences)
+- [`Set`](https://www.scala-lang.org/api/current/scala/collection/Set.html)
+- [`Map`](https://www.scala-lang.org/api/current/scala/collection/Map.html) (lookup data structure)
 
 ### Immutable Collections
+
 - [`List`](https://www.scala-lang.org/api/current/scala/collection/immutable/List.html) (linked list, provides fast sequential access)
 - [`Stream`](https://www.scala-lang.org/api/current/scala/collection/immutable/Stream.html) (same as List, except that the tail is evaluated only on demand)
 - [`Vector`](https://www.scala-lang.org/api/current/scala/collection/immutable/Vector.html) (array-like type, implemented as tree of blocks, provides fast random access)
@@ -306,6 +308,8 @@ Scala defines several collection classes:
 - [`Set`](https://www.scala-lang.org/api/current/scala/collection/immutable/Set.html) (collection without duplicate elements)
 
 ### Mutable Collections
+Most of the immutable collections above have a mutable counterpart, e.g.: 
+
 - [`Array`](https://www.scala-lang.org/api/current/scala/Array.html) (Scala arrays are native JVM arrays at runtime, therefore they are very performant)
 - Scala also has mutable maps and sets; these should only be used if there are performance issues with immutable types
 
