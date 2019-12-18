@@ -87,7 +87,7 @@ To curry an existing function :
 ```
 
 `this` references the current object, `assert(<condition>)` issues `AssertionError` if condition
-is not met. See [`scala.Predef`](http://www.scala-lang.org/api/rc2/scala/Predef$.html) for `require`, `assume` and `assert`.
+is not met. See [`scala.Predef`](https://www.scala-lang.org/api/current/scala/Predef$.html) for `require`, `assume` and `assert`.
 
 ## Operators
 
