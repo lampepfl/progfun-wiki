@@ -113,7 +113,7 @@ This code is better written as follows:
     def tweetsMentioning(dictionary: List[String]): TweetSet =
       TweetReader.allTweets.filter(tweet =>
         dictionary.exists(word => tweet.text.contains(word)))
-    
+
     val googleTweets = tweetsMentioning(google)
     val appleTweets  = tweetsMentioning(apple)
 
@@ -183,7 +183,7 @@ you can simply write
 
     cond
 
-(Similarly for the negaitve case).
+(Similarly for the negative case).
 
 
 ### Other styling issues?
