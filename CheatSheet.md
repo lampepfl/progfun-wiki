@@ -317,7 +317,7 @@ Most of the immutable collections above have a mutable counterpart, e.g.:
 ```scala
     val fruitList = List("apples", "oranges", "pears")
     // Alternative syntax for lists
-    val fruit = "apples" :: ("oranges" :: ("pears" :: Nil)) // parens optional, :: is right-associative
+    val fruit = "apples" :: ("oranges" :: ("pears" :: Nil)) // parens optional, :: (pronounced cons) is right-associative
     fruit.head   // "apples"
     fruit.tail   // List("oranges", "pears")
     val empty = List()
