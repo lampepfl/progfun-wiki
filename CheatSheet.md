@@ -34,7 +34,7 @@ There are certainly a lot of things that can be improved! If you would like to c
 These are functions that take a function as a parameter or return functions.
 ```scala
     // sum takes a function that takes an integer and returns an integer then 
-    returns a function that takes two integers and returns an integer  
+    // returns a function that takes two integers and returns an integer  
     def sum(f: Int => Int): (Int, Int) => Int = {  
       def sumf(a: Int, b: Int): Int = f(a) + f(b)  
       sumf  
