@@ -314,6 +314,7 @@ Most of the immutable collections above have a mutable counterpart, e.g.:
 - Scala also has mutable maps and sets; these should only be used if there are performance issues with immutable types
 
 ### Examples
+NOTE: For the correct code convention of using postfix or not, read [this](https://docs.scala-lang.org/style/method-invocation.html)
 ```scala
     val fruitList = List("apples", "oranges", "pears")
     // Alternative syntax for lists
