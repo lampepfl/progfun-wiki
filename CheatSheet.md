@@ -462,7 +462,7 @@ A for-expression looks like a traditional for loop but works differently interna
 
 `for (x <- e1; y <- e2; s) yield e3` is translated to `e1.flatMap(x => for (y <- e2; s) yield e3)`
 
-Note: s represents other fields that might be also expressed in the for-expression
+Note: s is a (potentially empty) sequence of fields (generators and filters)
 
 This means you can use a for-comprehension for your own type, as long
 as you define `map`, `flatMap` and `filter`.
