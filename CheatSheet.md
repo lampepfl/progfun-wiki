@@ -64,7 +64,7 @@ To curry an existing function :
 ```scala
     val f2: (Int, Int) => Int = f // uncurried version (type is (Int, Int) => Int)
     val f3: Int => Int => Int = f2.curried // transform it to a curried version (type is Int => Int => Int)
-    val f4: (Int, Int) => Int = f3.uncurried // go back to the uncurried version (type is (Int, Int) => Int)
+    val f4: (Int, Int) => Int = Function.uncurried(f3) // go back to the uncurried version (type is (Int, Int) => Int)
 ```
     
 ## Classes
