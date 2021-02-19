@@ -40,7 +40,7 @@ In order to evaluate the newly created Worksheet, click on the green arrow in th
 **Tip** : Scala worksheets are a great tool to familiarize yourself with the language and its features. Fill free to use them during the course when you want to test your understanding of the material.  
 
 
-## **5. Creating a Scala class**
+## **5. Creating a Scala program**
 
 In the same way as the worksheet, right click on the "scala" folder and go to **New** > **Scala Class**.
 
