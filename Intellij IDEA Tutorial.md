@@ -24,7 +24,7 @@ Now, rename the project and make sure that the selected JDK version is either 1.
 
 **Note**: You can always change the JDK version in IntelliJ by going to **File** > **Project Structure** > **Project**. And then you can select the desired JDK under **Project SDK**.
  
-**Note**: The first time we create or import a SBT project, Intellij may not show the structure of the project right away. This happens because Intellij decides to delay this task until it has successfully executed sbt and downloaded all the required dependencies. Once that's done, the usual `src` folder and their subfolders will be created.
+**Note**: The first time we create or import a SBT project, IntelliJ may not show the structure of the project right away. This happens because IntelliJ decides to delay this task until it has successfully executed sbt and downloaded all the required dependencies. Once that's done, the usual `src` folder and their subfolders will be created.
 
 ## **4. Creating a Scala worksheet**
 Right click on the "scala" folder as illustrated bellow. Then, go to **New** > **Scala Worksheet**.
