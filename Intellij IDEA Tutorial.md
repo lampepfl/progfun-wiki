@@ -1,10 +1,10 @@
 # IntelliJ IDEA Tutorial
 
-## **1. Download IntelliJ IDEA Community Edition**
+## 1. Download IntelliJ IDEA Community Edition
 
 IntelliJ IDEA Community Edition is an open-source version of IntelliJ IDEA, a premier IDE for Java, Scala and other JVM-based programming languages. [You can download it from the official website](https://www.jetbrains.com/idea/download).
 
-## **2. Install the Scala plugin**
+## 2. Install the Scala plugin
 After the installation, launch Intellij. You should see the welcome screen. Click on **plugins** and then search for "scala" in the list as illustrated bellow. Install the latest Scala (from JetBrains) plugin for Intellij.
 **Note**: You can do the same from the opened IDE with **File** > **Settings** > **Plugins**.  
 
@@ -12,7 +12,7 @@ After the installation, launch Intellij. You should see the welcome screen. Clic
 
 Note that Scala plugin requires restart to complete installation. Thus, **restart Intellij** before following the next steps.
 
-## **3. Create a project**
+## 3. Create a project
 From the welcome screen: **Projects** > **New Project**. As illustrated bellow select **Scala** > **sbt**.
 
 ![](./intellij-tutorial-images/create-project-1.png)
@@ -26,7 +26,7 @@ Now, rename the project and make sure that the selected JDK version is either 1.
  
 **Note**: The first time we create or import a SBT project, IntelliJ may not show the structure of the project right away. This happens because IntelliJ decides to delay this task until it has successfully executed sbt and downloaded all the required dependencies. Once that's done, the usual `src` folder and their subfolders will be created.
 
-## **4. Creating a Scala worksheet**
+## 4. Creating a Scala worksheet
 Right click on the "scala" folder as illustrated bellow. Then, go to **New** > **Scala Worksheet**.
 
 ![](./intellij-tutorial-images/worksheet-1.png)
@@ -40,7 +40,7 @@ In order to evaluate the newly created Worksheet, click on the green arrow in th
 **Tip** : Scala worksheets are a great tool to familiarize yourself with the language and its features. Fill free to use them during the course when you want to test your understanding of the material.  
 
 
-## **5. Creating a Scala program**
+## 5. Creating a Scala program
 
 In the same way as the worksheet, right click on the "scala" folder and go to **New** > **Scala Class**.
 
@@ -59,7 +59,7 @@ Once the program is run the following output should be visible in the console :
 
 ![](./intellij-tutorial-images/class-4.png)
 
-## **6. Opening an SBT project**
+## 6. Opening an SBT project
 All the handout files (assignments of this course) are SBT projects. If you want to hack on them using IntelliJ, you need to import the project first.
 
 * From the welcome screen
@@ -70,7 +70,7 @@ Go to **Projects** > **Open**. Then find the project you want to open and click 
 * From Intellij
 Go to **File** > **Open**. From here it is the same as from the welcome screen.
 
-## **7. Synchronizing SBT and IntelliJ IDEA projects**
+## 7. Synchronizing SBT and IntelliJ IDEA projects
 
 IntelliJ  IDEA SBT support synchronizes the project with your build file, so when you change Scala version you're going to use, or add a library, your project is updated accordingly. For the next time, you can avoid this step by checking off the option "Use auto-import" in Step 6.
 
@@ -82,7 +82,7 @@ The double percentage symbol will force sbt to use the current scala version def
 
 **Note**: Once you've changed the build.sbt file you need to reload the build. Usually, a very small icon will appear in the right top corner of the code tab. Click on it to reload the SBT changes.
 
-## **8. Using terminal to run SBT commands**
+## 8. Using terminal to run SBT commands
 
 To use the SBT command line from within IntelliJ, simply click on **sbt shell** in the bottom of the dialog box as shown bellow.
 
@@ -90,6 +90,6 @@ To use the SBT command line from within IntelliJ, simply click on **sbt shell** 
 
 By typing "compile" in the terminal you should see a green message saying "success".
 
-## **9. More information and troubleshooting**
+## 9. More information and troubleshooting
 
-To learn more about IntelliJ IDEA, read the IntelliJ IDEA official documentation.
+To learn more about IntelliJ IDEA, read the IntelliJ IDEA official [documentation](https://www.jetbrains.com/fr-fr/idea/resources/).
