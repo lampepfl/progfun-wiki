@@ -84,7 +84,7 @@ The double percentage symbol will force sbt to use the current scala version def
 
 ## **8. Using terminal to run SBT commands**
 
-To use the SBT command line from within Intellij, simply click on **sbt shell** in the bottom of the dialog box as shown bellow.
+To use the SBT command line from within IntelliJ, simply click on **sbt shell** in the bottom of the dialog box as shown bellow.
 
 ![](./intellij-tutorial-images/shell-1.png)
 
