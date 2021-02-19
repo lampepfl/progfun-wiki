@@ -60,7 +60,7 @@ Once the program is run the following output should be visible in the console :
 ![](./intellij-tutorial-images/class-4.png)
 
 ## **6. Opening an SBT project**
-All the handout files (assignments of this course) are SBT projects. If you want to hack on them using Intellij, you need to import the project first.
+All the handout files (assignments of this course) are SBT projects. If you want to hack on them using IntelliJ, you need to import the project first.
 
 * From the welcome screen
 Go to **Projects** > **Open**. Then find the project you want to open and click on the root folder of the project (the one containing the build.sbt file as direct child). Finally, click **OK** and the project should open in Intellij. 
