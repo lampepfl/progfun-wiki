@@ -20,8 +20,8 @@ There are certainly a lot of things that can be improved! If you would like to c
 
 <!-- code -->
 ```scala
-    def example = 2      // evaluated when called
-    val example = 2      // evaluated immediately
+    def example = 2      // evaluated every time when it is called
+    val example = 2      // evaluated immediately for once
     lazy val example = 2 // evaluated once when needed
     
     def square(x: Double)    // call by value
