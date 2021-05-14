@@ -271,7 +271,7 @@ can be written as follows:
 
 Pattern matches are also used quite often in anonymous functions:
 ```scala
-    val pairs: List[Option[Char]] = Some('a') :: None :: Some('b') :: Nil
+    val options: List[Option[Char]] = Some('a') :: None :: Some('b') :: Nil
     val chars: List[Char] = pairs.map(p => p match {
       case Some(ch) => ch
       case None => 'z'
