@@ -137,10 +137,9 @@ The same will apply once you work for a company and create code that is used in 
 In Scala, you often don't need to use explicit `return`s because control structures such as `if` are expressions.
 For example, in
 
-    def factorial(n: Int): Int = {
+    def factorial(n: Int): Int =
       if (n <= 0) return 1
       else return (n * factorial(n-1))
-    }
 
 the `return` statements can simply be dropped.
 
@@ -151,33 +150,32 @@ Since this is a course on functional programming, we want you to get used to wri
 You can often rewrite code that uses mutable local variables to code with helper functions that take accumulators.
 Instead of:
 
-    def fib(n: Int): Int = {
+    def fib(n: Int): Int =
 	  var a = 0
 	  var b = 1
 	  var i = 0
-	  while (i < n) {
-        val prev_a = a
-        a = b
-        b = prev_a + b
-        i = i + 1
-	  }
+	  while (i < n):
+            val prev_a = a
+            a = b
+            b = prev_a + b
+            i = i + 1
 	  a
-	}
 
 prefer:
 
-    def fib(n: Int): Int = {
+    def fib(n: Int): Int =
       def fibIter(i: Int, a: Int, b: Int): Int =
-        if (i == n) a else fibIter(i+1, b, a+b)
+        if i == n then a
+	else fibIter(i+1, b, a+b)
+
       fibIter(0, 0, 1)
-    }
 
 
 ### #12 Eliminate redundant "If" Expressions
 
 Instead of
 
-    if (cond) true else false
+    if cond then true else false
 
 you can simply write
 
