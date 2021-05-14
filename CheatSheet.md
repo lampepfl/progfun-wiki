@@ -154,7 +154,7 @@ or
 - Traits are similar to Java interfaces, except they can have non-abstract members:
 ```scala
         trait Planar:
-	  ...
+	   ...
         class Square extends Shape with Planar
 ```
 
@@ -488,4 +488,3 @@ is equivalent to
 ```scala
     (1 until n).flatMap(i => (1 until i).filter(j => isPrime(i + j)).map(j => (i, j)))
 ```
-
