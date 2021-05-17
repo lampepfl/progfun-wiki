@@ -88,6 +88,35 @@ To curry an existing function :
 `this` references the current object, `assert(<condition>)` issues `AssertionError` if condition
 is not met. See [`scala.Predef`](https://www.scala-lang.org/api/current/scala/Predef$.html) for `require`, `assume` and `assert`.
 
+## End markers
+
+When the body of a class, object, trait, method or value becomes long, visually
+inspecting where it ends might become challenging.
+In these situations, it is possible to explicitly signal to the reader that the body
+is over using the `end` keyword with the name of the definition:
+
+```scala
+    class MyClass(a: Int, b: String):
+      // body
+    end MyClass
+
+    object MyObject:
+      // body
+    end MyObject
+
+    object MyTrait:
+      // body
+    end MyTrait
+
+    def myMethod(name: String): Unit =
+      println(s"Hello $name")
+    end myMethod
+
+    val myVal: Int =
+      42
+    end myVal
+```
+
 ## Operators
 
 `myObject myMethod 1` is the same as calling `myObject.myMethod(1)`
