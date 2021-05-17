@@ -9,7 +9,7 @@ This page gives a very brief tutorial on the Scala programming language.
 
 ### Classes
 
-Classes in Scala are very similar to classes in Java. They are templates containing fields and methods. Like in Java, classes can be instantiated using the `new` construct, there can be many "instances" (or "objects") of the same class.
+Classes in Scala are very similar to classes in Java. They are templates containing fields and methods. Like in Java, there can be many "instances" (or "objects") of the same class.
 
 In Scala there exists a special kind of class named `case` classes. You will learn about case classes during the course.
 
@@ -23,32 +23,27 @@ Traits are like interfaces in Java, but they can also contain concrete members, 
 
 ### Objects
 
-Object in Scala are like classes, but for every `object` definition there is only one single instance. It is not possible to create instances of objects using `new`, instead you can just access the members (methods or fields) of an object using its name.
+Object in Scala are like classes, but for every `object` definition there is only one single instance. It is not possible to create instances of objects, instead you can just access the members (methods or fields) of an object using its name.
 
 
 ### Packages
 
-Adding a statement such as `package foo.bar` at the top of a file makes the code in a file part of the package `foo.bar`. You can then do `import foo.bar._` to make everything from package `foo.bar` available in your code. The content of a package can be scattered across many files. If you define a `class MyClass` in package `foo.bar`, you can import that specific class (and not anything else from that package) with `import foo.bar.MyClass`.
+Adding a statement such as `package foo.bar` at the top of a file makes the code in a file part of the package `foo.bar`. You can then do `import foo.bar.*` to make everything from package `foo.bar` available in your code. The content of a package can be scattered across many files. If you define a `class MyClass` in package `foo.bar`, you can import that specific class (and not anything else from that package) with `import foo.bar.MyClass`.
 
-In Scala, everything can be imported, not only class names. So for instance if you have an `object baz` in package `foo.bar`, then `import foo.bar.baz._` would import all the members of that object.
+In Scala, everything can be imported, not only class names. So for instance if you have an `object baz` in package `foo.bar`, then `import foo.bar.baz.*` would import all the members of that object.
 
 ### _Hello, World!_ in Scala
 
 Here are two ways to define a program which outputs "Hello, World!" in Scala:
-
-    object HelloWorld extends App {
-      println("Hello, World!")
-    }
+   @main def helloWorld =
+     println("Hello, World!")
 
 or
 
-    object HelloWorld {
-      def main(args: Array[String]) {
-        println("Hello, World!")
-      }
-    }
+   @main def helloWorld(args: Array[String]) =
+     println("Hello, World!")
 
-In Scala, the `main` or entry point method is defined in an `object`. An object can be made executable by either adding extending the type `App` or by adding a method `def main(args: Array[String])`.
+In Scala, the `main` or entry point method is defined in an top-level function.
 
 
 ## Source Files, Classfiles and the JVM
