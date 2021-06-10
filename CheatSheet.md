@@ -13,6 +13,26 @@ There are certainly a lot of things that can be improved! If you would like to c
 
 - Fork the repository [https://github.com/lampepfl/progfun-wiki](https://github.com/lampepfl/progfun-wiki) and check it out locally. To preview your changes, you need [jekyll](http://jekyllrb.com/). Navigate to your checkout and invoke `jekyll serve`, then open the page [http://localhost:4000/CheatSheet.html](http://localhost:4000/CheatSheet.html).
 
+## Source Files, Classfiles and the JVM
+
+Scala source code is stored in text files with the extension `.scala`. Typically
+Scala programmers create one source file for each class, or one source file for
+a class hierarchy: In fact, Scala allows multiple classes and objects to be
+defined in the same source file.  
+
+The name of a Scala source file can be chosen freely, but it is recommended to
+use the name of a class which is defined in that file.  Package hierarchies
+should be reflected in directory structure: a source file defining `class C` in
+`package foo.bar` should be stored in a subdirectory as `foo/bar/C.scala`. Scala
+does not really enforce this convention, but some tools such as IDEs might have
+problems otherwise.  The scala compiler compiles `.scala` source files to
+`.class` files, like the Java compiler. Classfiles are binary files containing
+machine code for the Java Virtual Machine. In order to run a Scala program, the
+JVM has to know the directory where classfiles are stored.  This parameter is
+called the “classpath”.  If you are using IntelliJ or sbt to compile and run
+your Scala code, you don’t need to do any of the above manually - these tools
+take care of invoking the Scala compiler and the JVM with the correct arguments.
+
 ## Evaluation Rules
 
 - Call by value: evaluates the function arguments before calling the function
@@ -67,6 +87,9 @@ To curry an existing function :
 ```
 
 ## Classes
+
+Classes in Scala are very similar to classes in Java. They are templates containing fields and methods. 
+Classes in Scala cannot have static members. You can use objects (see below) to achieve similar functionality as with static members in Java.
 ```scala
     class MyClass(x: Int, val y: Int,
                           var z: Int):        // Defines a new type MyClass with a constructor
@@ -126,6 +149,7 @@ Note that assignment operators have lowest precedence. (Read Scala Language Spec
     object MyObject extends TopLevel:
       ...  // defines a singleton object. No other instance can be created
 ```
+Object in Scala are like classes, but for every object definition there is only one single instance. It is not possible to create instances of objects using new, instead you can just access the members (methods or fields) of an object using its name.
 
 To create a runnable application in Scala:
 
@@ -142,9 +166,10 @@ or
 
 ## Class Organization
 
-- Classes and objects are organized in packages (`package myPackage`).
+- Classes and objects are organized in packages (`package myPackage`). Adding a statement such as package `foo.bar` at the top of a file makes the code in a file part of the package `foo.bar`. You can then do `import foo.bar.*` to make everything from package `foo.bar` available in your code. The content of a package can be scattered across many files. If you define a `class MyClass` in package `foo.bar`, you can import that specific class (and not anything else from that package) with `import foo.bar.MyClass`.
 
-- They can be referenced through import statements (`import myPackage.MyClass`, `import myPackage.*`,
+- Classes and objects can be referenced through import statements. In Scala, everything can be imported, not only class names. So for instance if you have an object baz in package foo.bar, then import foo.bar.baz.* would import all the members of that object.
+ (`import myPackage.MyClass`, `import myPackage.*`,
 `import myPackage.{MyClass1, MyClass2}`, `import myPackage.{MyClass1 => A}`)
 
 - They can also be directly referenced in the code with the fully qualified name (`new myPackage.MyClass1`)
