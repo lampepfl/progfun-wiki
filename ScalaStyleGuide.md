@@ -154,7 +154,7 @@ Instead of:
 	  var a = 0
 	  var b = 1
 	  var i = 0
-	  while (i < n):
+	  while i < n do
             val prev_a = a
             a = b
             b = prev_a + b
