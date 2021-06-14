@@ -15,7 +15,7 @@ There are certainly a lot of things that can be improved! If you would like to c
 
 ## Source Files, Classfiles and the JVM
 
-Scala source code is stored in text files with the extension `.scala`. Typically
+Scala source code is stored in text files with the extension `.scala`. Typically,
 Scala programmers create one source file for each class, or one source file for
 a class hierarchy: In fact, Scala allows multiple classes and objects to be
 defined in the same source file.  
@@ -513,4 +513,3 @@ is equivalent to
 ```scala
     (1 until n).flatMap(i => (1 until i).filter(j => isPrime(i + j)).map(j => (i, j)))
 ```
-
