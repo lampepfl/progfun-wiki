@@ -17,8 +17,8 @@ There are certainly a lot of things that can be improved! If you would like to c
 
 Scala source code is stored in text files with the extension `.scala`. Typically,
 Scala programmers create one source file for each class, or one source file for
-a class hierarchy: In fact, Scala allows multiple classes and objects to be
-defined in the same source file.  
+a class hierarchy. In Scala, you can define multiple classes and objects
+in the same source file.  
 
 The name of a Scala source file can be chosen freely, but it is recommended to
 use the name of a class which is defined in that file.  Package hierarchies
