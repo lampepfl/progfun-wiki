@@ -104,7 +104,7 @@ is over using the `end` keyword with the name of the definition:
       // body
     end MyObject
 
-    object MyTrait:
+    trait MyTrait:
       // body
     end MyTrait
 
@@ -301,15 +301,15 @@ can be written as follows:
 Pattern matches are also used quite often in anonymous functions:
 ```scala
     val options: List[Option[Char]] = Some('a') :: None :: Some('b') :: Nil
-    val chars: List[Char] = pairs.map(p => p match {
+    val chars: List[Char] = options.map(o => o match {
       case Some(ch) => ch
       case None => 'z'
     })
 ```
 
-Instead of `p => p match { case ... }`, you can simply write `{case ...}`, so the above example becomes more concise:
+Instead of `o => o match { case ... }`, you can simply write `{case ...}`, so the above example becomes more concise:
 ```scala
-    val chars: List[Char] = pairs.map {
+    val chars: List[Char] = options.map {
       case Some(ch) => ch
       case None => 'z'
     }
@@ -382,7 +382,7 @@ NOTE: For the correct code convention of using postfix or not, read [this](https
     xs(n)             // the nth element of xs, complexity O(n)
     xs ++ ys          // concatenation, complexity O(n)
     xs.reverse        // reverse the order, complexity O(n)
-    xs updated(n, x)  // same list than xs, except at index n where it contains x, complexity O(n)
+    xs updated(n, x)  // same list as xs, except at index n where it contains x, complexity O(n)
     xs indexOf x      // the index of the first element equal to x (-1 otherwise)
     xs contains x     // same as xs indexOf x >= 0
     xs filter p       // returns a list of the elements that satisfy the predicate p
