@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Cheat Sheet
+title: Cheat Sheet - ezelee
 ---
 
 This cheat sheet originated from the forum, credits to Laurent Poulain.
