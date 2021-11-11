@@ -1,6 +1,6 @@
 ---
-layout: page
-title: Cheat Sheet
+##layout: page
+###title: Cheat Sheet
 ---
 
 This cheat sheet originated from the forum, credits to Laurent Poulain.
