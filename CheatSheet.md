@@ -90,6 +90,7 @@ is not met. See [`scala.Predef`](https://www.scala-lang.org/api/current/scala/Pr
 
 ## End markers
 
+
 When the body of a class, object, trait, method or value becomes long, visually
 inspecting where it ends might become challenging.
 In these situations, it is possible to explicitly signal to the reader that the body
