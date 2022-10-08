@@ -362,8 +362,8 @@ NOTE: For the correct code convention of using postfix or not, read [this](https
 
     val r: Range = 1 until 5 // 1, 2, 3, 4
     val s: Range = 1 to 5    // 1, 2, 3, 4, 5
-    1 to 10 by 3  // 1, 4, 7, 10
-    6 to 1 by -2  // 6, 4, 2
+    1 to 10 by 3 toList // 1, 4, 7, 10
+    6 to 1 by -2 toList // 6, 4, 2
 
     val s = (1 to 6).toSet
     s.map(_ + 2) // adds 2 to each element of the set
