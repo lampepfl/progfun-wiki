@@ -427,7 +427,7 @@ NOTE: For the correct code convention of using postfix or not, read [this](https
     // Operations on LazyLists
     val xs = LazyList(1, 2, 3)
     val xs = LazyList.cons(1, LazyList.cons(2, LazyList.cons(3, LazyList.empty))) // same as above
-    (1 to 1000).to[LazyList] // => Stream(1, ?)
+    LazyList.range(1, 1000) // generates a lazy list based on a range from 1 to 999
     x #:: xs // Same as LazyList.cons(x, xs)
              // In the LazyList's cons operator, the second parameter (the tail)
              // is defined as a "call by name" parameter.
