@@ -329,7 +329,7 @@ Scala defines several collection classes:
 ### Immutable Collections
 
 - [`List`](https://www.scala-lang.org/api/current/scala/collection/immutable/List.html) (linked list, provides fast sequential access)
-- [`Stream`](https://www.scala-lang.org/api/current/scala/collection/immutable/Stream.html) (same as List, except that the tail is evaluated only on demand)
+- [`LazyList`](https://www.scala-lang.org/api/current/scala/collection/immutable/LazyList.html) (same as List, except that the tail is evaluated only on demand)
 - [`Vector`](https://www.scala-lang.org/api/current/scala/collection/immutable/Vector.html) (array-like type, implemented as tree of blocks, provides fast random access)
 - [`Range`](https://www.scala-lang.org/api/current/scala/collection/immutable/Range.html) (ordered sequence of integers with equal spacing)
 - [`String`](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/String.html) (Java type, implicitly converted to a character sequence, so you can treat every string like a `Seq[Char]`)
